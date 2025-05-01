@@ -15,7 +15,7 @@ const Footer = () => {
           <p className="text-sm text-blue-900 mb-4 leading-relaxed">
             We consistently deliver creative tech solutions with passion and integrity. From innovative web applications to real-world project mentoring, we're committed to excellence.
           </p>
-          <img src={logo} alt="Code Vibe Innovation Logo" className="h-16 w-auto" />
+          <img src={logo} alt="Code Vibe Innovation Logo" className="h-12 w-auto" />
         </div>
 
         {/* Quick Links */}
@@ -41,7 +41,7 @@ const Footer = () => {
           <h1 className="text-2xl font-bold mb-4 text-blue-900">GET IN TOUCH</h1>
           <div className="space-y-3 text-sm text-blue-900">
             <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-900" /> codevibeinnovation@gmail.com</p>
-            <p className="flex items-center gap-2"><Phone className="w-4 h-4 text-blue-900" /> 9723924957 / </p>
+            <p className="flex items-center gap-2"><Phone className="w-4 h-4 text-blue-900" />  95746 26933  </p>
             <p className="flex items-start gap-2"><MapPin className="w-8 h-6 text-blue-900 " />A-803, Samudra Complex, above Sankalp Restaurant, Near Girish Cold Drinks, CG Road, Navrangpura</p>
           </div>
 
