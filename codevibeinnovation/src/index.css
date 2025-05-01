@@ -1,0 +1,15 @@
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 1ch;
+  color: #1E3A8A; /* match your text color */
+  animation: blink 1s step-start infinite;
+}
