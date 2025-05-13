@@ -40,9 +40,10 @@ const Footer = () => {
         <div>
           <h1 className="text-2xl font-bold mb-4 text-blue-900">GET IN TOUCH</h1>
           <div className="space-y-3 text-sm text-blue-900">
-            <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-900" /> codevibeinnovation@gmail.com</p>
+            <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-900" /> codevibeinnovation@gmail.com  info@codevibeinnovation.com
+</p>
             <p className="flex items-center gap-2"><Phone className="w-4 h-4 text-blue-900" />  95746 26933  </p>
-            <p className="flex items-start gap-2"><MapPin className="w-8 h-6 text-blue-900 " />A-803, Samudra Complex, above Sankalp Restaurant, Near Girish Cold Drinks, CG Road, Navrangpura</p>
+            <p className="flex items-start gap-2"><MapPin className="w-8 h-6 text-blue-900 " />A-803, Samudra Complex, above Saffron Restaurant, Near Girish Cold Drinks, CG Road, Navrangpura - 380009</p>
           </div>
 
           {/* Social Icons */}
@@ -50,7 +51,7 @@ const Footer = () => {
             {[ Instagram, Linkedin].map((Icon, i) => (
               <a
                 key={i}
-                href=""
+                href="/"
                 className="p-2 bg-blue-100 hover:bg-blue-900 hover:text-white transition rounded-full shadow-md"
               >
                 <Icon className="w-5 h-5" />
@@ -62,7 +63,7 @@ const Footer = () => {
 
       {/* Divider */}
       <div className="border-t pt-6 text-center text-sm text-blue-900">
-        &copy; {new Date().getFullYear()} <span className="font-semibold text-blue-900">CODE VIBE INNOVATION</span>. All rights reserved.
+        &copy; <span className="font-semibold text-blue-900">2023 CODE VIBE INNOVATION</span>. All rights reserved.
       </div>
     </footer>
   );

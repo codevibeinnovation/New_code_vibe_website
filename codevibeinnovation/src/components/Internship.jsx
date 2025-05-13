@@ -362,45 +362,45 @@ const InternshipPage = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const data = new FormData();
-    data.append('internshipTitle', selectedInternship.title); // Dynamic
-    data.append('name', formData.name);
-    data.append('email', formData.email);
-    data.append('phone', formData.phone);
-    data.append('resume', formData.resume); // Selected file
+  //   const data = new FormData();
+  //   data.append('internshipTitle', selectedInternship.title); // Dynamic
+  //   data.append('name', formData.name);
+  //   data.append('email', formData.email);
+  //   data.append('phone', formData.phone);
+  //   data.append('resume', formData.resume); // Selected file
 
-    try {
-      const response = await fetch('http://localhost:5000/api/internship-apply', {
-        method: 'POST',
-        body: data,
-      });
+  //   // try {
+  //   //   const response = await fetch('http://localhost:5000/api/internship-apply', {
+  //   //     method: 'POST',
+  //   //     body: data,
+  //   //   });
 
-      const result = await response.json();
-      console.log('Success:', result);
+  //   //   const result = await response.json();
+  //   //   console.log('Success:', result);
 
-      // Show success message
-      setSuccessMessage("Application submitted successfully!");
+  //   //   // Show success message
+  //   //   setSuccessMessage("Application submitted successfully!");
 
-      // Hide the success message after 3 seconds
-      setTimeout(() => {
-        setSuccessMessage(""); // Clear the success message
-      }, 3000);
+  //   //   // Hide the success message after 3 seconds
+  //   //   setTimeout(() => {
+  //   //     setSuccessMessage(""); // Clear the success message
+  //   //   }, 3000);
 
-      // Optionally, close the modal and clear form
-      setIsModalOpen(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        resume: null,
-      });
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+  //   //   // Optionally, close the modal and clear form
+  //   //   setIsModalOpen(false);
+  //   //   setFormData({
+  //   //     name: "",
+  //   //     email: "",
+  //   //     phone: "",
+  //   //     resume: null,
+  //   //   });
+  //   // } catch (error) {
+  //   //   console.error('Error:', error);
+  //   // }
+  // };
 
   return (
     <div className="min-h-screen pt-12 px-4 pb-20 sm:px-6 lg:px-12 bg-white">
@@ -450,7 +450,7 @@ const InternshipPage = () => {
                 <div className="mt-4 md:mt-0 md:ml-6">
                   <button
                     className="mt-auto w-full bg-gradient-to-r from-[#127DC8] to-[#0E5A9E] hover:from-[#0E5A9E] hover:to-[#127DC8] text-white py-3 px-6 rounded-2xl font-semibold transition duration-300 shadow-md shadow-blue-400/50"
-                    onClick={() => handleApplyClick(internship)}
+                 
                   >
                     Apply Now
                   </button>
@@ -461,88 +461,7 @@ const InternshipPage = () => {
         </div>
       </div>
 
-      {/* Modal for Application Form */}
-      {isModalOpen && (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg w-full max-w-lg relative">
-            {/* Close Icon */}
-            <button
-              className="absolute top-4 right-4 text-blue-900 transition"
-              onClick={handleCloseModal}
-            >
-              <XCircle size={32} />
-            </button>
-            <h2 className="text-2xl font-bold text-center text-blue-900 mb-4">
-              Apply for {selectedInternship.title}
-            </h2>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-blue-900">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-blue-900">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="phone" className="block text-sm font-medium text-blue-900">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  required
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="resume" className="block text-sm font-medium text-blue-900">
-                  Resume (Upload File)
-                </label>
-                <input
-                  type="file"
-                  id="resume"
-                  name="resume"
-                  onChange={handleFileChange}
-                  required
-                  className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-                />
-              </div>
-              <div className="flex justify-end gap-4">
-                <button
-                  type="submit"
-                  className="mt-auto w-full bg-[#127DC8] hover:bg-[#127DC9] text-white py-2 rounded-xl font-semibold transition duration-300 shadow-md shadow-blue-300/40"
-                >
-                  Submit Application
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+     
     </div>
   );
 };

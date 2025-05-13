@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { CheckCircle } from "lucide-react";
-import { ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const Home1 = () => {
   const featuresOne = [
     "Innovative Learning",
@@ -20,16 +21,16 @@ const Home1 = () => {
   ];
 
   const internships = [
-    "Python Django",
-    "Java",
-    "React JS",
-    "Mern stack",
-    "Machine Learning & Data Science",
-    "PHP Web Development",
-    "Software Testing",
-    "Flutter",
-    "AWS Solution Architect",
-    "Data Analytics",
+    { name: "Python Django", path: "/internship" },
+    { name: "Java", path: "/internship" },
+    { name: "React JS", path: "/internship" },
+    { name: "Mern stack", path: "/internship" },
+    { name: "Machine Learning & Data Science", path: "/internship" },
+    { name: "PHP Web Development", path: "/internship" },
+    { name: "Software Testing", path: "/internship" },
+    { name: "Flutter", path: "/internship" },
+    { name: "AWS Solution Architect", path: "/internship" },
+    { name: "Data Analytics", path: "/internship" },
   ];
 
   const heroRef = useRef(null);
@@ -54,13 +55,11 @@ const Home1 = () => {
   const internInView = useInView(internRef, { once: true });
 
   return (
-    <div className="w-full pt-12 bg-white overflow-x-hidden">
+    <div className="w-full bg-white pt-24 overflow-x-hidden">
       {/* Hero Section */}
-
-      
       <section
         ref={heroRef}
-        className="min-h-screen flex items-center px-4 sm:px-6 md:px-10 py-12 bg-white"
+        className="flex items-center px-4 sm:px-6 md:px-10 py-6 bg-white"
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -68,12 +67,11 @@ const Home1 = () => {
           transition={{ duration: 0.8 }}
           className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
         >
-          {/* Image */}
           <motion.div whileHover={{ scale: 1.02 }} className="w-full">
             <motion.img
               src="https://5.imimg.com/data5/SELLER/Default/2023/10/353395945/MR/SM/PW/56220350/multimedia-graphics-design-1000x1000.png"
               alt="Innovation Illustration"
-              className="w-full object-contain max-h-[500px]"
+              className="w-full object-contain max-h-[400px]"
               animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 4,
@@ -84,17 +82,20 @@ const Home1 = () => {
             />
           </motion.div>
 
-          {/* Text */}
           <div className="space-y-6 text-center md:text-left">
             <h2 className="text-3xl sm:text-4xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] via-[#F472B6] via-[#EF4444] to-[#F97316]">
               CODE VIBE INNOVATION
             </h2>
-      
-            <h2 className="text-blue-900 text-xl sm:text-2xl block font-sans font-bold uppercase" style={{ textShadow: '0 0 22px rgba(0, 0, 0, 0.3), 0 0 7px rgba(0, 0, 0, 0.2)' }}>
-  {typedText}<span className="blinking-cursor">|</span>
-</h2>
-
-          
+            <h2
+              className="text-blue-900 text-xl sm:text-2xl font-bold uppercase"
+              style={{
+                textShadow:
+                  "0 0 22px rgba(0, 0, 0, 0.3), 0 0 7px rgba(0, 0, 0, 0.2)",
+              }}
+            >
+              {typedText}
+              <span className="blinking-cursor">|</span>
+            </h2>
             <p className="text-[#293D8C] text-lg sm:text-xl leading-relaxed">
               At Code Vibe Innovation, we offer a creative approach to coding
               education. A space for aspiring developers to build, innovate, and
@@ -119,7 +120,7 @@ const Home1 = () => {
       {/* Empower Section */}
       <section
         ref={empowerRef}
-        className="min-h-screen flex items-center px-4 sm:px-6 md:px-10 py-12 bg-white"
+        className="flex items-center px-4 sm:px-6 md:px-10 py-6 bg-white"
       >
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -158,7 +159,7 @@ const Home1 = () => {
             <motion.img
               src="https://www.myshortlister.com/app/uploads/2022/10/ezgif.com-gif-maker-2.gif"
               alt="Empowerment"
-              className="w-full rounded-3xl object-cover max-h-[600px]"
+              className="w-full rounded-3xl object-cover max-h-[500px]"
               animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 4,
@@ -174,19 +175,19 @@ const Home1 = () => {
       {/* Internship Section */}
       <section
         ref={internRef}
-        className="min-h-screen flex items-center px-4 sm:px-6 md:px-10 py-12 bg-white"
+        className="flex items-center px-4 sm:px-6 md:px-10 py-6 bg-white"
       >
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={internInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
         >
           <motion.div whileHover={{ scale: 1.02 }} className="w-full">
             <motion.img
               src="https://img.freepik.com/free-vector/coding-workshop-concept-illustration_114360-8412.jpg"
               alt="Internships"
-              className="w-full object-contain max-h-[500px]"
+              className="w-full object-contain max-h-[400px]"
               animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 4,
@@ -197,25 +198,24 @@ const Home1 = () => {
             />
           </motion.div>
 
-      
-<div className="space-y-4 text-left">
-<h2 className="text-3xl sm:text-4xl font-bold underline text-blue-800">
-  Our Internship Offerings
-</h2>
-<ul className="list-none space-y-2 text-blue-900 text-xl sm:text-2xl">
-  {internships.map((item, index) => (
-    <motion.li
-      key={index}
-      whileHover={{ scale: 1.02, color: "#ED455E" }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="flex items-center gap-2 cursor-pointer hover:underline"
-    >
-      <ArrowRight className="w-6 h-6" /> {/* Arrow icon */}
-      {item}
-    </motion.li>
-  ))}
-</ul>
-</div>
+          <div className="space-y-4 text-left">
+            <h2 className="text-3xl sm:text-4xl font-bold underline text-blue-800">
+              Our Internship Offerings
+            </h2>
+            <ul className="list-none space-y-2 text-blue-900 text-xl sm:text-2xl">
+              {internships.map((item, index) => (
+                <motion.li
+                  key={index}
+                  whileHover={{ scale: 1.02, color: "#ED455E" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="flex items-center gap-2 cursor-pointer hover:underline"
+                >
+                  <ArrowRight className="w-6 h-6" />
+                  <Link to={item.path}>{item.name}</Link>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
       </section>
     </div>

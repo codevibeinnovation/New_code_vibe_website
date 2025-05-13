@@ -5,6 +5,10 @@ import logo from '../assets/logo.svg';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
   useEffect(() => {
     const handleLinkClick = () => setIsMobileMenuOpen(false);
     const mobileLinks = document.querySelectorAll('#mobile-menu a');
@@ -21,6 +25,7 @@ const Navbar = () => {
     { name: 'About Us', path: '/about-us' },
     { name: 'Contact Us', path: '/contact-us' },
     { name: 'Services', path: '/services' },
+    { name: 'Blog', path: '/blog' },
   ];
 
   return (
@@ -29,70 +34,67 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <NavLink to="/" className="text-2xl font-bold flex items-center">
-          <img className="h-12 w-32 rounded-full m-0 p-0" src={logo} alt="Logo" />
-        </NavLink>
-        
-
+            <img className="h-12 w-32 rounded-full m-0 p-0" src={logo} alt="Logo" />
+          </NavLink>
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-8">
             {navItems.map(({ name, path }) => (
               <li key={path}>
-              <NavLink
-              to={path}
-              className={({ isActive }) =>
-                `text-xl transition duration-300 ease-in-out hover:text-[#1E3A8A] ${
-                  isActive
-                    ? 'font-bold underline text-transparent bg-clip-text bg-[#1E3A8A] '
-                    : 'font-medium text-blue-900'
-                }`
-              }
-            >
-            {name}
-            </NavLink>
-            
-           
-                  
-               
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    `text-xl hover:text-[#1E3A8A] ${
+                      isActive
+                        ? 'font-bold underline text-transparent bg-clip-text bg-[#1E3A8A]'
+                        : 'font-medium text-blue-900'
+                    }`
+                  }
+                >
+                  {name}
+                </NavLink>
               </li>
             ))}
           </ul>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle Button with Hamburger / Close */}
           <button
             id="mobile-menu-button"
             className="md:hidden text-blue-900 focus:outline-none"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={toggleMobileMenu}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            {isMobileMenuOpen ? (
+              // Close Icon
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // Hamburger Icon
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         <div
           id="mobile-menu"
-          className={`md:hidden ${isMobileMenuOpen ? 'animate__animated animate__fadeInDown' : 'hidden'}`}
+          className={`md:hidden ${isMobileMenuOpen ? 'animate__animated animate__fadeInDown block' : 'hidden'}`}
         >
-          <ul className="pt-4 pb-3 space-y-3">
+          <ul className="pt-4 pb-3 space-y-3 px-4">
             {navItems.map(({ name, path }) => (
               <li key={path}>
                 <NavLink
                   to={path}
                   className={({ isActive }) =>
-                    `block py-3 px-4 text-lg rounded-md transition   duration-300 hover:text-[#1E3A8A] ${
-                      isActive ? 'font-bold underline text-transparent bg-clip-text bg-[#1E3A8A] ' : 'text-blue-900'
+                    `block py-3 px-4 text-lg rounded-md transition duration-300 hover:text-[#1E3A8A] ${
+                      isActive ? 'font-bold underline text-transparent bg-clip-text bg-[#1E3A8A]' : 'text-blue-900'
                     }`
                   }
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {name}
                 </NavLink>

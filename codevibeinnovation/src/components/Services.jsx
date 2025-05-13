@@ -33,7 +33,7 @@ const Services = () => {
       <div className="container mx-auto px-6 py-12">
         {/* Title */}
         <div className="text-center mb-12">
-        <h2 className="text-3xl pt-20 text-center md:text-4xl text-blue-900 font-bold">
+        <h2 className="text-3xl  text-center md:text-4xl text-blue-900 font-bold">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] via-[#F472B6] via-[#EF4444] to-[#F97316]">
   Our Services
        </span>

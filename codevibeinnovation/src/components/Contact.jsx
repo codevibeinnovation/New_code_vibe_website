@@ -38,7 +38,7 @@ const ContactUs = () => {
               <div>
                 <p className="text-blue-900 font-semibold">Follow us on Facebook</p>
                 <p className="text-blue-800 text-sm">
-                  Follow on Facebook to get latest updates of Maxgen
+                  Follow on Facebook to get latest updates of Code Vibe Innovation
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const ContactUs = () => {
               <div>
                 <p className="text-blue-900 font-semibold">Follow us on Instagram</p>
                 <p className="text-blue-800 text-sm">
-                  Follow on Instagram to get latest updates of Maxgen
+                  Follow on Instagram to get latest updates of Code Vibe Innovation
                 </p>
               </div>
             </div>
@@ -60,7 +60,7 @@ const ContactUs = () => {
               <div>
                 <p className="text-blue-900 font-semibold">Follow us on LinkedIn</p>
                 <p className="text-blue-800 text-sm">
-                  Follow on LinkedIn to get latest updates of Maxgen
+                  Follow on LinkedIn to get latest updates of Code Vibe Innovation
                 </p>
               </div>
             </div>
@@ -108,7 +108,7 @@ const ContactUs = () => {
       <div className="w-full flex justify-center mt-10">
         <iframe
           title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58747.95251506344!2d72.51751564959892!3d23.03305866632895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f2324c95ef%3A0x9bccbe758120f29f!2sSamudra%20Complex!5e0!3m2!1sen!2sin!4v1745757899860!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.394983856598!2d179.997425075181!3d28.647889732197502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85005332e7c5%3A0x6df9822b4d6def45!2s!5e0!3m2!1sen!2sin!4v1746420393421!5m2!1sen!2sin"
           width="100%"
           height="400"
           allowFullScreen=""
