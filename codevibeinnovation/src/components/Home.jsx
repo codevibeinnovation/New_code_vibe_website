@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const Home1 = () => {
   const featuresOne = [
@@ -218,7 +219,19 @@ const Home1 = () => {
           </div>
         </motion.div>
       </section>
+      <Helmet>
+  <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Code Vibe Innovation",
+      "url": "https://codevibeinnovation.com/"
+    }
+  `}</script>
+</Helmet>
+
     </div>
+    
   );
 };
 

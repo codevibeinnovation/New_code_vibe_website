@@ -1,10 +1,16 @@
 import { useParams } from "react-router-dom";
 import { courses } from "./Courses";
+
+import React, { useState } from 'react';
+
+import { FaChevronDown} from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa"; // Right arrow icon
 import { FaChevronRight } from "react-icons/fa"; // Replace with your preferred one
 const CourseDetail = () => {
-  const { id } = useParams();
-  const course = courses.find((c) => c.id === parseInt(id));
+  const { path } = useParams();
+const course = courses.find((c) => c.path === path);
+
+
 
   if (!course)
     return (
@@ -105,20 +111,35 @@ const CourseDetail = () => {
       <hr className="border-gray-300 my-10" />
 
       {/* Course Content */}
-      <div className="space-y-6 px-4 sm:px-6 lg:px-12">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-900 hover:scale-105 transition-transform duration-300">
-        Course Content
-      </h2>
-    
-      {Object.entries(course.content.moduleContent).map(([moduleTitle, topics], index) => (
-        <div
-          key={index}
-          className="bg-blue-50 p-4 sm:p-6 lg:p-8 rounded-xl shadow-md hover:shadow-2xl hover:bg-blue-100 transition-all duration-300"
+   <div className="space-y-6 px-4 sm:px-6 lg:px-12">
+  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-900 hover:scale-105 transition-transform duration-300">
+    Course Content
+  </h2>
+
+  {Object.entries(course.content.moduleContent).map(([moduleTitle, topics], index) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <div
+        key={index}
+        className="bg-blue-50 rounded-xl shadow-md transition-all duration-300"
+      >
+        {/* Module Header */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-full flex justify-between items-center p-4 sm:p-6 lg:p-8 text-left group hover:bg-blue-100 transition-all duration-300"
         >
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-900 mb-3">
+          <h3 className="text-sm sm:text-sm lg:text-xl font-semibold text-blue-900 group-hover:text-blue-800">
             {moduleTitle}
           </h3>
-          <ul className="text-blue-900 space-y-2">
+          <span className="text-blue-700 transition-transform duration-300">
+            {open ? <FaChevronDown className="w-5 h-5" /> : <FaChevronRight className="w-5 h-5" />}
+          </span>
+        </button>
+
+        {/* Module Topics */}
+        {open && (
+          <ul className="px-6 pb-6 text-blue-900 space-y-2">
             {topics.map((topic, topicIdx) => (
               <li
                 key={topicIdx}
@@ -129,10 +150,11 @@ const CourseDetail = () => {
               </li>
             ))}
           </ul>
-        </div>
-      ))}
-    </div>
-    
+        )}
+      </div>
+    );
+  })}
+</div>
 
       {/* Offerings Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-16">

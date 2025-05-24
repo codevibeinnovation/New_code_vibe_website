@@ -15,6 +15,7 @@ import CourseDetail from './components/CourseDetail';
 
 import BlogDetails from './components/BlogDetails';
 
+
 const App = () => {
   return (
     <div>
@@ -30,8 +31,9 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
-          <Route path="/courses/:id" element={<CourseDetail/>} />
-          
+          <Route path="/courses/:path" element={<CourseDetail />} />
+
+   
         </Routes>
       </BrowserRouter>
       <Footer/>

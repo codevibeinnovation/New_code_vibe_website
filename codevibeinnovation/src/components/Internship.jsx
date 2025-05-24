@@ -272,6 +272,7 @@
 // export default InternshipPage;
 import React, { useState } from "react";
 import { XCircle } from "lucide-react";
+import { Helmet } from 'react-helmet';
 const internships = [
     {
       id: 1,
@@ -461,7 +462,22 @@ const InternshipPage = () => {
         </div>
       </div>
 
-     
+      <Helmet>
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "EducationalOccupationalProgram",
+          "name": "Internship Program",
+          "provider": {
+            "@type": "Organization",
+            "name": "Code Vibe Innovation",
+            "url": "https://codevibeinnovation.com/"
+          },
+          "educationalProgramMode": "online",
+          "url": "https://yourdomain.com/internshiphttps://codevibeinnovation.com/internship
+      `}</script>
+    </Helmet>
+    
     </div>
   );
 };

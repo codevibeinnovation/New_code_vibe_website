@@ -3,6 +3,7 @@ export const courses = [
     id: 1,
     image: "https://storage.googleapis.com/ureify-strapi-assets/Crack_interviews_like_a_pro_5_interview_hacks_51ac1eca80/Crack_interviews_like_a_pro_5_interview_hacks_51ac1eca80.png",
     title: "Interview Cracker Course",
+    path:"interviewcracker",
     badge: "Beginner to Advanced",
     description: 
     "This course is designed to help you crack interviews with confidence and precision. Covering everything from resume and LinkedIn optimization to HR, technical, and behavioral interview preparation, it equips you with practical skills, strategies, and real-world insights. Whether you're a fresher or an experienced professional, this course ensures you're ready to impress recruiters and land your dream job.",
@@ -128,7 +129,8 @@ export const courses = [
 {
   id: 2,
   image: "/images/coombo.png",
-  title: "Core Programming Languages (C, C++, Java)",
+  title: "Core Programming Languages(C, C++, Java)",
+  path:"cjava",
   badge: "Beginner to Advanced",
   description:
     "This course covers three fundamental programming languages: C, C++, and Java. These languages are widely used for system programming, application development, and large-scale software solutions. Whether you're interested in system-level programming, game development, or enterprise applications, this course will provide you with the knowledge and skills needed.",
@@ -261,6 +263,8 @@ export const courses = [
     id: 3,
     image:"/images/pyhton.png",
         title: "Core Python",
+        path:"CorePyhton",
+
     badge: "Beginner to Advanced",
     description:
       "Python is the most favorable programming language among students, developers, data scientists, and software engineers due to its flexibility, versatility, and object-oriented features. It supports a wide range of applications from web development to data science and machine learning.",
@@ -384,7 +388,8 @@ export const courses = [
   {
     id: 4,
     image: "/images/pj.png",
-    title: "Python + Django + Rest API with Real-world Project",
+    title: "Python+Django+Rest API with Real-world Project",
+    path:"pythonDjangoAPIwithRealWorldProject",
     badge: "Beginner to Advanced",
     description:
       "This course teaches you Python programming along with Django, a powerful web framework for building web applications. You will learn the full stack of Python programming and Django web development, and work on a real-world project that helps you integrate your learning in practice.",
@@ -582,7 +587,8 @@ export const courses = [
   {
     id: 5,
   image: "/images/htmlcssjs.png",
-    title: "HTML, CSS & JavaScript with Real-world Project",
+    title: "HTML,CSS & JavaScript with Real-world Project",
+    path:"HtmlCssJavascriptWithRealWorldProject",
     badge: "Beginner to Advanced",
     description:
       "Learn the fundamentals of web development with HTML, CSS, and JavaScript. This course covers everything from basic structure and styling to dynamic, interactive websites using JavaScript. You will also build a real-world project to apply your skills.",
@@ -712,7 +718,8 @@ export const courses = [
   {
   id: 7,
   image: "https://media.licdn.com/dms/image/v2/D4E22AQF2iWeyyMOW9A/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1719086579882?e=2147483647&v=beta&t=a9ArHJc7P9DXkEb6Yppxq3im-mphRuuLqiX7EkWTBQk",
-  title: "Frontend Development with HTML, CSS, JavaScript & React JS",
+  title: "Frontend Development with HTML,CSS,JavaScript & ReactJS",
+  path:"FrontendDevelopment",
   badge: "Beginner to Advanced",
   description:
     "This comprehensive frontend development course covers everything you need to build beautiful and interactive web interfaces. Learn HTML, CSS, JavaScript, and React JS through real-world examples and build a fully functional project by the end.",
@@ -872,6 +879,7 @@ export const courses = [
   id: 6,
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKvpE0S1cB9FYdkRzcjpUt5nSIDn2Q8aZAbz7ulpF69tbFd8qGNw&s=10&ec=72940545",
   title: "Database Administrator course",
+  path:"DatabaseAdministratorcourse",
   badge: "Beginner to Advanced",
   description:
     "Master full-stack web development using MongoDB, Express.js, React.js, and Node.js. This hands-on course covers everything from frontend design with React to backend APIs and database integration, culminating in a real-world MERN stack project.",
@@ -977,7 +985,8 @@ export const courses = [
 {
   id: 8,
   image: "https://images.prismic.io/loco-blogs/79328284-f97b-489f-924c-eb3b17e34b56_image2.png?auto=compress%2Cformat&rect=0%2C0%2C1999%2C1124&w=1920&h=1080&ar=1.91%3A1",
-  title: "Full Stack Development with MERN Stack + Real-world Project",
+  title: "Full Stack Development with MERN Stack+Real-world Project",
+  path:"MernStack",
   badge: "Beginner to Advanced",
   description:
     "Master full-stack web development using MongoDB, Express.js, React.js, and Node.js. This hands-on course covers everything from frontend design with React to backend APIs and database integration, culminating in a real-world MERN stack project.",
@@ -1181,7 +1190,8 @@ export const courses = [
 {
   id: 9,
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSahPG6mtKWq8UfADVGOmu5tKETISz4CoEnI8hArJF84Yq7VqPYBg&s=10&ec=72940545",
-  title: "PPT Making, Documentation & MS Word Mastery",
+  title: "PPT Making,Documentation & MS Word Mastery",
+  path:"PptMakingDocumentation",
   badge: "Beginner Friendly",
   description:
     "This course teaches students and professionals how to effectively create presentations, write structured documentation, and master MS Word tools. Ideal for academic, professional, and project-based needs, including final-year reports, resumes, and business presentations.",
@@ -1270,7 +1280,8 @@ export const courses = [
 {
   id: 10,
   image: "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png",
-  title: "FastAPI Web Framework + Real-world Project",
+  title: "FastAPI Web Framework+Real-world Project",
+  path:"FastApi",
   badge: "Intermediate to Advanced",
   description:
     "FastAPI is a modern, high-performance web framework for building APIs with Python. This course guides you through building fast and scalable backends using FastAPI, with hands-on practice and real-world project development.",
@@ -1347,7 +1358,8 @@ export const courses = [
 {
   id: 11,
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSKtcptbDNrRPx2u3J4fhOGLJ7CL6lSPW3RekXU_nohfoGLcmKXA&s=10&ec=72940545",
-  title: "AWS Cloud Computing + Real-world Project",
+  title: "AWS Cloud Computing+Real-world Project",
+  path:"Aws",
   badge: "Beginner to Advanced",
   description:
     "This course introduces Amazon Web Services (AWS), the leading cloud service provider. Learn core AWS services, cloud architecture, deployment strategies, and build a real-world project hosted on AWS. Perfect for aspiring cloud engineers, developers, and IT professionals.",
@@ -1424,13 +1436,14 @@ export const courses = [
   ]
 },
 {
-  "id": 12,
-  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo519VF2yAXQzjFKmop7hQEW27QGw_tkGoTQ&s=10&ec=72940545",
-  "title": "Flutter Development + Real-world Mobile App",
-  "badge": "Intermediate to Advanced",
-  "description": "Flutter is a powerful UI framework for building natively compiled applications for mobile, web, and desktop from a single codebase. This course will guide you through developing fast and responsive mobile apps with Flutter, focusing on hands-on practice and a real-world project.",
-  "category": "Mobile Development",
-  "content": {
+  id: 12,
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo519VF2yAXQzjFKmop7hQEW27QGw_tkGoTQ&s=10&ec=72940545",
+  title: "Flutter Development+Real-world Mobile App",
+  path:"Flutter",
+  badge: "Intermediate to Advanced",
+  description: "Flutter is a powerful UI framework for building natively compiled applications for mobile, web, and desktop from a single codebase. This course will guide you through developing fast and responsive mobile apps with Flutter, focusing on hands-on practice and a real-world project.",
+  category: "Mobile Development",
+  content: {
     "courseOverview": [
       "Introduction to Flutter and Dart Language",
       "Setting Up Flutter Development Environment",
@@ -1467,7 +1480,7 @@ export const courses = [
       ]
     }
   },
-  "overview": {
+  overview: {
     "whatYouCanDo": [
       "Develop responsive and interactive mobile apps",
       "Integrate third-party APIs and databases into your Flutter apps",
@@ -1492,18 +1505,19 @@ export const courses = [
       "Interview & Resume Guidance"
     ]
   },
-  "logos": [
+  logos: [
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
   ]
 },
 {
-  "id": 13,
-  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUHLOZIAFGiIB56EW3FEGKcmlxylSuybeEIff_SSpz-OHHCZmuIg&s=10&ec=72940545",
-  "title": "Figma + Photoshop Design Course",
-  "badge": "Beginner to Advanced",
-  "description": "Learn how to design stunning graphics, web pages, and prototypes with Figma and Photoshop. This course provides comprehensive hands-on experience with two of the most popular design tools used by professionals for UI/UX design, graphic design, and more.",
-  "category": "Design & Creativity",
-  "content": {
+  id: 13,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUHLOZIAFGiIB56EW3FEGKcmlxylSuybeEIff_SSpz-OHHCZmuIg&s=10&ec=72940545",
+  title: "Figma+Photoshop Design Course",
+ path:"FigmaPhotoshop",
+  badge: "Beginner to Advanced",
+  description: "Learn how to design stunning graphics, web pages, and prototypes with Figma and Photoshop. This course provides comprehensive hands-on experience with two of the most popular design tools used by professionals for UI/UX design, graphic design, and more.",
+  category: "Design & Creativity",
+  content: {
     "courseOverview": [
       "Introduction to Figma and Photoshop",
       "Setting Up Figma and Photoshop for Design Projects",
@@ -1548,24 +1562,24 @@ export const courses = [
       ]
     }
   },
-  "overview": {
-    "whatYouCanDo": [
+  overview: {
+    whatYouCanDo: [
       "Design stunning UI/UX for mobile and web apps using Figma",
       "Master advanced Photoshop techniques for graphic design and photo editing",
       "Create prototypes and animations for interactive designs in Figma",
       "Build complete design systems and work collaboratively with design teams"
     ],
-    "prerequisites": [
+    prerequisites: [
       "Basic knowledge of design principles (optional)",
       "No prior experience with Figma or Photoshop required"
     ],
-    "weOffer": [
+    weOffer: [
       "Online & Offline Training",
       "Weekend & One-on-One Batches",
       "Corporate Training Available",
       "Project-Based Learning"
     ],
-    "trainingIncludes": [
+    trainingIncludes: [
       "Theory + Hands-on Sessions",
       "Source Files for Projects",
       "Certificate of Completion",
@@ -1573,7 +1587,7 @@ export const courses = [
       "Interview & Resume Guidance"
     ]
   },
-  "logos": [
+  logos: [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1947WuYOc-RqCo-7M25ZaxQjfDzXfe6wR6rZNQTUjbPFMGOB4vg&s=10&ec=72940545",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5UQs-3-OesYgajT-EoA9gib7Om2Pavo-RDgpv2OdN-Q&s&ec=72940545",
   ]

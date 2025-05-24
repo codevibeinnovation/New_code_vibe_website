@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-
+import { Helmet } from 'react-helmet';
 const ContactUs = () => {
   return (
     <div className="w-full min-h-screen px-4 sm:px-8 lg:px-24 py-16">
@@ -116,6 +116,17 @@ const ContactUs = () => {
           className="border-0 shadow-lg rounded-md"
         ></iframe>
       </div>
+      <Helmet>
+  <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Us - Code Vibe Innovation",
+      "url": "https://codevibeinnovation.com/contact-us"
+    }
+  `}</script>
+</Helmet>
+
     </div>
   );
 };

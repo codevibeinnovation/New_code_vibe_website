@@ -22,7 +22,7 @@ const Footer = () => {
         <div>
         <h1 className="text-2xl font-bold mb-4 text-blue-900">QUICK LINKS</h1>
         <ul className="space-y-3">
-          {["Home", "Courses", "Internship", "About Us", "Contact Us"].map((item, i) => (
+          {["Home", "Courses", "Internship", "About Us", "Contact Us","Blog"].map((item, i) => (
             <li key={i}>
               <a
                 href={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -40,7 +40,7 @@ const Footer = () => {
         <div>
           <h1 className="text-2xl font-bold mb-4 text-blue-900">GET IN TOUCH</h1>
           <div className="space-y-3 text-sm text-blue-900">
-            <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-900" /> codevibeinnovation@gmail.com  info@codevibeinnovation.com
+            <p className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-900" /> codevibeinnovation@gmail.com 
 </p>
             <p className="flex items-center gap-2"><Phone className="w-4 h-4 text-blue-900" />  95746 26933  </p>
             <p className="flex items-start gap-2"><MapPin className="w-8 h-6 text-blue-900 " />A-803, Samudra Complex, above Saffron Restaurant, Near Girish Cold Drinks, CG Road, Navrangpura - 380009</p>
@@ -48,16 +48,28 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-6">
-            {[ Instagram, Linkedin].map((Icon, i) => (
-              <a
-                key={i}
-                href="/"
-                className="p-2 bg-blue-100 hover:bg-blue-900 hover:text-white transition rounded-full shadow-md"
-              >
-                <Icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
+  {[
+    {
+      Icon: Instagram,
+      url: "https://www.instagram.com/codevibeinnovation/", // replace with actual link
+    },
+    {
+      Icon: Linkedin,
+      url: "https://www.linkedin.com/in/codevibe-innovation-57a770363/", // replace with actual link
+    },
+  ].map(({ Icon, url }, i) => (
+    <a
+      key={i}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="p-2 bg-blue-100 hover:bg-blue-900 hover:text-white transition rounded-full shadow-md"
+    >
+      <Icon className="w-5 h-5" />
+    </a>
+  ))}
+</div>
+
         </div>
       </div>
 

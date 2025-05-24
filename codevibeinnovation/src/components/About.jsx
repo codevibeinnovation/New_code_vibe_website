@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import { Helmet } from 'react-helmet';
 const About = () => {
   const industryImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXAvYk1PJfPN5Jpeag74pd2B6qupwJnKcOH2KvmKlWp4qc20QYAw&s=10&ec=72940545";
   const mentorImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfyNZ1T73Rl4ne7R7ABL07JEHDj8TEkC0BzokMnxDfzINB2Oi7Ig&s=10&ec=72940545";
@@ -212,6 +212,23 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Helmet>
+  <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Code Vibe Innovation",
+      "url": "https://codevibeinnovation.com/about-us",
+      "logo": "https://codevibeinnovation.com/assets/logo-BeOYuSzZ.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9574626933",
+        "contactType": "Customer Service"
+      }
+    }
+  `}</script>
+</Helmet>
+
     </section>
   );
 };
