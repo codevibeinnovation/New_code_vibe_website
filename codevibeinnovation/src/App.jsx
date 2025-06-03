@@ -14,12 +14,14 @@ import CourseDetail from './components/CourseDetail';
 import WhatsAppButton from './components/WhatsAppButton';
 
 import BlogDetails from './components/BlogDetails';
+import ScrollToTop from './components/ScrollToTop';
 
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
+      <ScrollToTop/>
         <Navbar />
         <Routes>
           {/* Ensure Home page is the default route */}

@@ -37,84 +37,82 @@ const blogs = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-white py-10 pt-24 px-4">
-      {/* Header */}
-  {/* Page Heading */}
-<div className="text-center mb-16">
-<h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-900 drop-shadow-md">
-  Our Latest Blogs
-</h1>
-<p className="text-lg md:text-2xl text-blue-900 mt-4 max-w-2xl mx-auto">
-Explore insights, tips, and resources to boost your tech career and stay industry-ready!
-</p>
-<div className="mt-4 flex justify-center">
-  <span className="h-1 w-24 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full animate-pulse"></span>
-</div>
-</div>
-
-
-      {/* Blog Cards */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-        {blogs.map((blog, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 transition duration-300"
-          > <Link
-          to={`/blog/${blog.id}`}  >
-          <img
-          src={blog.image}
-          alt={blog.title}
-          className="w-full h-56 object-cover hover:cursor-pointer"
-        />
-        
-            </Link>
-            <div className="p-6">
-              <h2 className="text-xl font-semibold text-blue-900 mb-2 hover:text-blue-900 transition">
-                {blog.title}
-              </h2>
-              <p className="text-blue-900 text-sm mb-4">{blog.summary}</p>
-              <Link
-                to={`/blog/${blog.id}`}  
-                className="text-sm font-medium text-blue-900 hover:text-blue-900"
-              >
-                Read More →
-              </Link>
-            </div>
-          </div>
-        ))}
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-100 py-10 pt-24 px-4">
+    {/* Page Heading */}
+    <div className="text-center mb-16">
+      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-pink-500 to-orange-500 drop-shadow-lg">
+        Our Latest Blogs
+      </h1>
+      <p className="text-lg md:text-2xl text-blue-800 mt-4 max-w-2xl mx-auto">
+        Explore insights, tips, and resources to boost your tech career and stay industry-ready!
+      </p>
+      <div className="mt-4 flex justify-center">
+        <span className="h-1 w-24 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 rounded-full animate-pulse"></span>
       </div>
-      <Helmet>
-  <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Code Vibe Blog",
-      "url": "https://codevibeinnovation.com/blog",
-      "blogPost": blogs.map(blog => ({
-        "@type": "BlogPosting",
-        "headline": blog.title,
-        "image": [blog.image],
-        "url": `https://codevibeinnovation.com/blog/${blog.id}`,
-        "datePublished": "2025-05-23",  // use actual dates if available
-        "author": {
-          "@type": "Organization",
-          "name": "Code Vibe Innovation"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Code Vibe Innovation",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://codevibeinnovation.com/logo.png"
-          }
-        },
-        "description": blog.summary
-      }))
-    })}
-  </script>
-</Helmet>
-
-
     </div>
+  
+    {/* Blog Cards */}
+    <div className="max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
+      {blogs.map((blog, idx) => (
+        <div
+          key={idx}
+          className="bg-white rounded-2xl shadow-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border border-blue-100"
+        >
+          <Link to={`/blog/${blog.id}`}>
+            <img
+              src={blog.image}
+              alt={blog.title}
+              className="w-full h-56 object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </Link>
+          <div className="p-6">
+            <h2 className="text-xl font-bold text-blue-800 mb-2 hover:text-purple-600 transition-colors">
+              {blog.title}
+            </h2>
+            <p className="text-gray-700 text-sm mb-4">{blog.summary}</p>
+            <Link
+              to={`/blog/${blog.id}`}
+              className="inline-block bg-gradient-to-r from-purple-600 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md hover:shadow-lg hover:opacity-90 transition-all duration-300"
+            >
+              Read More →
+            </Link>
+          </div>
+        </div>
+      ))}
+    </div>
+  
+    {/* Schema.org SEO */}
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Code Vibe Blog",
+          "url": "https://codevibeinnovation.com/blog",
+          "blogPost": blogs.map(blog => ({
+            "@type": "BlogPosting",
+            "headline": blog.title,
+            "image": [blog.image],
+            "url": `https://codevibeinnovation.com/blog/${blog.id}`,
+            "datePublished": "2025-05-23",
+            "author": {
+              "@type": "Organization",
+              "name": "Code Vibe Innovation"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Code Vibe Innovation",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://codevibeinnovation.com/logo.png"
+              }
+            },
+            "description": blog.summary
+          }))
+        })}
+      </script>
+    </Helmet>
+  </div>
+  
   );
 }

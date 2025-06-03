@@ -283,87 +283,81 @@ const CoursesSection = () => {
   return (
     <div>
     <div className="relative w-full min-h-screen px-4 sm:px-6 py-10 pt-24 bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden">
-    {/* Background Glow */}
-    <div className="absolute inset-0 z-0 animate-pulse bg-gradient-to-r from-blue-100 via-pink-100 to-orange-100 opacity-20" />
-
-    {/* Heading */}
-    <div className="text-center z-10">
-      <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-800 via-pink-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
-        Explore Our Courses
-      </h2>
-      <p className="mt-4 text-sm sm:text-base text-blue-900">
-        Unlock your future with hands-on practical learning.
-      </p>
-    </div>
-
-    {/* Course Cards */}
-    <div className="relative z-10 pt-16 grid gap-10 sm:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {courses.map((course, i) => (
-        <motion.div
-          key={course.id}
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={i}
-          className="group relative p-6 bg-white/30 backdrop-blur-xl border border-blue-300 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-[1.03] transform transition-all duration-500 cursor-pointer"
-        >
-          {/* Gradient Glow Border */}
-          <div className="absolute -inset-1 z-0 bg-gradient-to-r from-blue-400 via-pink-400 to-orange-400 blur-md opacity-30 group-hover:opacity-50 rounded-3xl" />
-
-          <div className="relative z-10 flex flex-col h-full">
-            {/* Logos */}
-            <div className="flex flex-wrap gap-2 items-center mb-4">
-              {course.logos.map((logo, idx) =>
-                logo.startsWith("http") ? (
-                  <div key={idx} className="p-1 rounded-lg border border-blue-600 bg-white">
-                    <img
-                      src={logo}
-                      alt="logo"
-                      className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
-                    />
-                  </div>
-                ) : (
-                  <span
-                    key={idx}
-                    className="text-xs sm:text-sm px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium"
-                  >
-                    {logo}
-                  </span>
-                )
-              )}
+      {/* Background Glow */}
+      <div className="absolute inset-0 z-0 animate-pulse bg-gradient-to-r from-blue-100 via-pink-100 to-orange-100 opacity-20" />
+  
+      {/* Heading */}
+      <div className="text-center z-10">
+        <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-800 via-pink-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
+          Explore Our Courses
+        </h2>
+        <p className="mt-4 text-sm sm:text-base text-blue-900">
+          Unlock your future with hands-on practical learning.
+        </p>
+      </div>
+  
+      {/* Course Cards */}
+      <div className="relative z-10 pt-16 grid gap-10 sm:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {courses.map((course, i) => (
+          <div
+            key={course.id}
+            className="group relative p-6 bg-white/30 backdrop-blur-xl border border-blue-300 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-[1.03] transform transition-all duration-500 cursor-pointer"
+          >
+            {/* Gradient Glow Border */}
+            <div className="absolute -inset-1 z-0 bg-gradient-to-r from-blue-400 via-pink-400 to-orange-400 blur-md opacity-30 group-hover:opacity-50 rounded-3xl" />
+  
+            <div className="relative z-10 flex flex-col h-full">
+              {/* Logos */}
+              <div className="flex flex-wrap gap-2 items-center mb-4">
+                {course.logos.map((logo, idx) =>
+                  logo.startsWith("http") ? (
+                    <div key={idx} className="p-1 rounded-lg border border-blue-600 bg-white">
+                      <img
+                        src={logo}
+                        alt="logo"
+                        className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <span
+                      key={idx}
+                      className="text-xs sm:text-sm px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium"
+                    >
+                      {logo}
+                    </span>
+                  )
+                )}
+              </div>
+  
+              {/* Badge */}
+              <span className="text-xs bg-yellow-400 text-white font-bold px-3 py-1 rounded-full w-fit mb-2">
+                {course.badge}
+              </span>
+  
+              {/* Title */}
+              <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-3">{course.title}</h3>
+  
+              {/* Points */}
+              <ul className="list-disc pl-4 text-sm sm:text-base text-blue-900 space-y-1 mb-6">
+                {course.points.map((point, idx) => (
+                  <li key={idx}>{point}</li>
+                ))}
+              </ul>
+  
+              {/* Button */}
+              <button
+                onClick={() => handleLearnMore(course.path)}
+                className="mt-auto w-full bg-gradient-to-r from-blue-600 to-pink-500 hover:from-blue-700 hover:to-pink-600 text-white py-2 rounded-xl font-semibold transition-all duration-300 shadow-md"
+              >
+                Learn More
+              </button>
             </div>
-
-            {/* Badge */}
-            <span className="text-xs bg-yellow-400 text-white font-bold px-3 py-1 rounded-full w-fit mb-2">
-              {course.badge}
-            </span>
-
-            {/* Title */}
-            <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-3">{course.title}</h3>
-
-            {/* Points */}
-            <ul className="list-disc pl-4 text-sm sm:text-base text-blue-900 space-y-1 mb-6">
-              {course.points.map((point, idx) => (
-                <li key={idx}>{point}</li>
-              ))}
-            </ul>
-
-            {/* Button */}
-            <button
-              onClick={() => handleLearnMore(course.path)}
-              className="mt-auto w-full bg-gradient-to-r from-blue-600 to-pink-500 hover:from-blue-700 hover:to-pink-600 text-white py-2 rounded-xl font-semibold transition-all duration-300 shadow-md"
-            >
-              Learn More
-            </button>
           </div>
-        </motion.div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
   
-    
-    </div>
   );
 };
 

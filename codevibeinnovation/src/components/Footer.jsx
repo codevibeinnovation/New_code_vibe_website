@@ -6,34 +6,37 @@ import {
   Linkedin,
   Send,
   Smartphone,
-  Building2
+  Building2,
 } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-800 py-10 px-6 border-t border-gray-200 shadow-inner">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-6">
+    <footer className="bg-gradient-to-tr from-blue-50 via-white to-blue-100 text-blue-900 py-8 px-8 border-t border-blue-200 shadow-lg">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 mb-10">
 
         {/* About */}
         <div>
-          <h5 className="text-2xl sm:text-3xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] via-[#F472B6] via-[#EF4444] to-[#F97316]">
+          <h5 className="text-3xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] via-[#F472B6] via-[#EF4444] to-[#F97316]">
             CODE VIBE INNOVATION
           </h5>
-          <p className="text-sm text-blue-900 mb-4 mt-2 leading-relaxed">
-            We deliver creative tech solutions with passion and integrity. From innovative web apps to project mentoring, we’re committed to digital excellence.
+          <p className="text-sm text-blue-800 mb-4 mt-3 leading-relaxed max-w-xs">
+            Delivering creative tech solutions with passion and integrity. From innovative web apps to mentoring — committed to digital excellence.
           </p>
-          <img src={logo} alt="Code Vibe Innovation Logo" className="h-14 w-auto mt-3" />
+          <img src={logo} alt="Code Vibe Innovation Logo" className="h-16 w-auto mt-2" />
+          <p className="mt-2 text-xs text-blue-900 italic">"FROM LEARNERS TO LEADERS"</p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h1 className="text-xl font-bold mb-4 text-blue-900">QUICK LINKS</h1>
-          <ul className="space-y-2 text-sm text-blue-900">
+          <h2 className="text-xl font-bold mb-5 border-b border-blue-300 pb-2 w-max">
+            QUICK LINKS
+          </h2>
+          <ul className="space-y-3 text-sm text-blue-900">
             {["Home", "Courses", "Internship", "About Us", "Contact Us", "Blog"].map((item, i) => (
               <li key={i}>
                 <a
                   href={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="hover:text-blue-600 hover:underline transition-all duration-300"
+                  className="hover:text-blue-700 hover:underline transition-all duration-300 font-medium"
                 >
                   {item}
                 </a>
@@ -44,8 +47,10 @@ const Footer = () => {
 
         {/* Courses */}
         <div>
-          <h1 className="text-xl font-bold mb-4 text-blue-900">COURSES</h1>
-          <ul className="space-y-2 text-sm text-blue-900">
+          <h2 className="text-xl font-bold mb-5 border-b border-blue-300 pb-2 w-max">
+            COURSES
+          </h2>
+          <ul className="space-y-3 text-sm text-blue-900">
             {[
               { name: "MERN Stack", path: "/courses/MernStack" },
               { name: "Python + Django", path: "/courses/pythonDjangoAPIwithRealWorldProject" },
@@ -58,7 +63,7 @@ const Footer = () => {
               <li key={i}>
                 <a
                   href={path}
-                  className="hover:text-blue-600 hover:underline transition-all duration-300"
+                  className="hover:text-blue-700 hover:underline transition-all duration-300 font-medium"
                 >
                   {name}
                 </a>
@@ -69,37 +74,47 @@ const Footer = () => {
 
         {/* Contact Info & Social Links */}
         <div>
-          <h1 className="text-xl font-bold mb-4 text-blue-900">GET IN TOUCH</h1>
-          <div className="space-y-3 text-sm text-blue-900">
-            <p className="flex items-center gap-2">
-              <Send className="w-4 h-4 text-blue-600" />
-              codevibeinnovation@gmail.com
+          <h2 className="text-xl font-bold mb-5 border-b border-blue-300 pb-2 w-max">
+            GET IN TOUCH
+          </h2>
+          <div className="space-y-4 text-sm text-blue-900 max-w-xs">
+            <p className="flex items-center gap-3 font-medium">
+              <Send className="w-5 h-5 text-blue-600" />
+              <a href="mailto:codevibeinnovation@gmail.com" className="hover:text-blue-700 underline">
+                codevibeinnovation@gmail.com
+              </a>
             </p>
-            <p className="flex items-center gap-2">
-              <Smartphone className="w-4 h-4 text-blue-600" />
-              95746 26933
+            <p className="flex items-center gap-3 font-medium">
+              <Smartphone className="w-5 h-5 text-blue-600" />
+              <a href="tel:+919574626933" className="hover:text-blue-700 underline">
+                95746 26933
+              </a>
             </p>
-            <p className="flex items-start gap-2">
-              <Building2 className="w-6 h-6 text-blue-600 mt-1" />
-              A-803, Samudra Complex, above Saffron Restaurant, Near Girish Cold Drinks, CG Road, Navrangpura - 380009
+            <p className="flex items-start gap-3 font-medium">
+              <Building2 className="w-12 h-6 mt-1 text-blue-600" />
+              <span>
+                A-803, Samudra Complex, above Saffron Restaurant, Near Girish Cold Drinks,
+                CG Road, Navrangpura - 380009
+              </span>
             </p>
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-4 mt-6">
+          <div className="flex gap-5 mt-8">
             {[
-              { Icon: Instagram, url: "https://www.instagram.com/codevibeinnovation/" },
-              { Icon: Linkedin, url: "https://www.linkedin.com/in/codevibe-innovation-57a770363/" },
-              { Icon: Facebook, url: "https://facebook.com" }
-            ].map(({ Icon, url }, i) => (
+              { Icon: Instagram, url: "https://www.instagram.com/codevibeinnovation/", label: "Instagram" },
+              { Icon: Linkedin, url: "https://www.linkedin.com/in/codevibe-innovation-57a770363/", label: "LinkedIn" },
+              { Icon: Facebook, url: "https://facebook.com", label: "Facebook" }
+            ].map(({ Icon, url, label }, i) => (
               <a
                 key={i}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-blue-100 hover:bg-blue-900 hover:text-white transition rounded-full shadow"
+                aria-label={label}
+                className="p-3 bg-blue-100 rounded-full shadow-md hover:bg-blue-700 hover:text-white transform hover:scale-110 transition-transform duration-300 ease-in-out"
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-6 h-6" />
               </a>
             ))}
           </div>
@@ -107,8 +122,8 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t pt-6 text-center text-sm text-blue-900">
-        &copy; <span className="font-semibold">{new Date().getFullYear()} CODE VIBE INNOVATION</span>. All rights reserved.
+      <div className="border-t border-blue-300 pt-6 text-center text-sm text-blue-700 font-semibold tracking-wide select-none">
+        &copy; {new Date().getFullYear()} CODE VIBE INNOVATION. All rights reserved.
       </div>
     </footer>
   );
