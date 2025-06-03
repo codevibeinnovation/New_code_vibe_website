@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import Services from './components/Services';
 import Blog from './components/Blog';
 import CourseDetail from './components/CourseDetail';
-
+import WhatsAppButton from './components/WhatsAppButton';
 
 import BlogDetails from './components/BlogDetails';
 
@@ -37,6 +37,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       <Footer/>
+      <WhatsAppButton />
     </div>
   );
 }; 

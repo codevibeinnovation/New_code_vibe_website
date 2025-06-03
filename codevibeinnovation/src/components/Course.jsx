@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { motion } from "framer-motion";
 // Import your courses array or pass it as a prop
 const courses = [
   {
@@ -137,19 +138,20 @@ const courses = [
   },
   {
     id: 9,
-    title: "PPT Making + Documentation + Word",
-    badge: "Basics",
-     path:"PptMakingDocumentation",
+    title: "Advanced Excel with AI",
+    badge: "Basics to Advanced",
+     path:"AdvancedExcelWithAI",
     points: [
-      "Presentation skills",
-      "PPT formatting",
-      "Project reports",
-      "MS Word usage",
+      "Advanced Excel Fundamentals",
+      "Automation with Macros and VBA",
+      "AI-powered Data Analysis Techniques",
+      "Custom AI Solutions & Automation",
     ],
     logos: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiMApr6tW5NhBmqDmOxygX25UWvgbH5SZBw2c0LchzHw&s&ec=72940545",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdrido6Usyed_owgiqFsZmdNvxR_dQEVhFE8H0iAW3C66TWLc_KQ&s=10&ec=72940545",
-    ],
+       
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+     
+    ]
   },
   
   {
@@ -199,29 +201,78 @@ logos: [
   "https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png",
 ],
 },
-{
-id: 13,
-title: "Figma & Photoshop",
-badge: "Basic to advanced",
-path:"FigmaPhotoshop",
-points: [
-  "Introduction ",
-  "Designing Prototypes",
-  "Photo Retouching and Manipulation",
-  "Collaborative Design Techniques",
-  "Layer Masking and Blending",
-  "Design Systems and Components",
 
-],
-logos: [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1947WuYOc-RqCo-7M25ZaxQjfDzXfe6wR6rZNQTUjbPFMGOB4vg&s=10&ec=72940545",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5UQs-3-OesYgajT-EoA9gib7Om2Pavo-RDgpv2OdN-Q&s&ec=72940545",
-],
-}
+{
+  id: 14,
+  title: "DataScience",
+  badge: "Advanced",
+  path: "DataScience",
+  points: [
+    "Python Programming Basics to Advanced",
+    "Machine Learning Algorithms and Techniques",
+
+    "Statistics and Time Series Analysis"
+  ],
+  logos: [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "https://www.trustedtechteam.com/cdn/shop/products/Excel_grande.png?v=1676068154",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIdD07Wmb_onuF5t2hwRKrBH7HYc7fCE0A0A&s",
+   
+    
+  ],
+},
+{
+  id: 15,
+  title: "Cyber Security",
+  badge: "Advanced",
+  path: "cyber-security",
+  points: [
+    "Fundamentals of Cyber Security and Network Security",
+    "Ethical Hacking Techniques and Tools",
+    "Risk Management, Firewalls & Cryptography"
+  ],
+  logos: [
+    "https://cdn-icons-png.flaticon.com/512/3986/3986483.png", // Cyber Shield
+    "https://cdn-icons-png.flaticon.com/512/595/595067.png",    // Ethical Hacking
+    "https://cdn-icons-png.flaticon.com/512/2721/2721290.png"   // General Security
+  ]
+},
+{
+  id: 13,
+  title: "Figma & Photoshop",
+  badge: "Basic to advanced",
+  path:"FigmaPhotoshop",
+  points: [
+    "Introduction ",
+    "Designing Prototypes",
+    "Photo Retouching and Manipulation",
+    "Collaborative Design Techniques"
+  
+  ],
+  logos: [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1947WuYOc-RqCo-7M25ZaxQjfDzXfe6wR6rZNQTUjbPFMGOB4vg&s=10&ec=72940545",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5UQs-3-OesYgajT-EoA9gib7Om2Pavo-RDgpv2OdN-Q&s&ec=72940545",
+  ],
+  }
+
+
+
 
 
   
 ];
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 const CoursesSection = () => {
   const navigate = useNavigate();
 
@@ -231,33 +282,52 @@ const CoursesSection = () => {
   
   return (
     <div>
-    <div className="relative w-full min-h-screen px-4 sm:px-6 py-10 pt-24 overflow-hidden">
-      {/* Background animation container */}
-      <div className="absolute inset-0 opacity-70 z-0 animate-background"></div>
+    <div className="relative w-full min-h-screen px-4 sm:px-6 py-10 pt-24 bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden">
+    {/* Background Glow */}
+    <div className="absolute inset-0 z-0 animate-pulse bg-gradient-to-r from-blue-100 via-pink-100 to-orange-100 opacity-20" />
 
-      {/* Heading */}
-      <div className="flex justify-center items-center h-full">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] via-[#F472B6] via-[#EF4444] to-[#F97316] text-center">
-          Explore Our Courses
-        </h2>
-      </div>
+    {/* Heading */}
+    <div className="text-center z-10">
+      <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-800 via-pink-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
+        Explore Our Courses
+      </h2>
+      <p className="mt-4 text-sm sm:text-base text-blue-900">
+        Unlock your future with hands-on practical learning.
+      </p>
+    </div>
 
-      {/* Course Cards */}
-      <div className="relative z-10 pt-10 w-full mx-auto grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 animate-fadeIn">
-        {courses.map((course) => (
-          <div
-            key={course.id}
-            className="border-2 border-blue-700 rounded-2xl shadow-[#127DC8] transition duration-500 ease-in-out p-5 sm:p-6 flex flex-col justify-between hover:scale-105 hover:shadow-[#127DC8] hover:shadow-lg bg-white"
-          >
+    {/* Course Cards */}
+    <div className="relative z-10 pt-16 grid gap-10 sm:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {courses.map((course, i) => (
+        <motion.div
+          key={course.id}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={i}
+          className="group relative p-6 bg-white/30 backdrop-blur-xl border border-blue-300 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-[1.03] transform transition-all duration-500 cursor-pointer"
+        >
+          {/* Gradient Glow Border */}
+          <div className="absolute -inset-1 z-0 bg-gradient-to-r from-blue-400 via-pink-400 to-orange-400 blur-md opacity-30 group-hover:opacity-50 rounded-3xl" />
+
+          <div className="relative z-10 flex flex-col h-full">
             {/* Logos */}
             <div className="flex flex-wrap gap-2 items-center mb-4">
               {course.logos.map((logo, idx) =>
                 logo.startsWith("http") ? (
-                  <div key={idx} className="p-1 sm:p-2 rounded-lg border border-blue-800">
-                    <img src={logo} alt="logo" className="h-6 w-6 sm:h-8 sm:w-8 object-contain" />
+                  <div key={idx} className="p-1 rounded-lg border border-blue-600 bg-white">
+                    <img
+                      src={logo}
+                      alt="logo"
+                      className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
+                    />
                   </div>
                 ) : (
-                  <span key={idx} className="text-sm sm:text-base px-2 py-1 rounded-lg bg-gray-100 text-blue-800">
+                  <span
+                    key={idx}
+                    className="text-xs sm:text-sm px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium"
+                  >
                     {logo}
                   </span>
                 )
@@ -265,15 +335,15 @@ const CoursesSection = () => {
             </div>
 
             {/* Badge */}
-            <span className="text-xs font-semibold text-black bg-yellow-400 px-3 py-1 rounded-full w-fit mb-2 capitalize">
+            <span className="text-xs bg-yellow-400 text-white font-bold px-3 py-1 rounded-full w-fit mb-2">
               {course.badge}
             </span>
 
             {/* Title */}
-            <h3 className="text-lg sm:text-xl font-bold text-blue-900 mb-3">{course.title}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-3">{course.title}</h3>
 
             {/* Points */}
-            <ul className="list-disc pl-5 text-sm sm:text-base text-blue-900 space-y-1 mb-6">
+            <ul className="list-disc pl-4 text-sm sm:text-base text-blue-900 space-y-1 mb-6">
               {course.points.map((point, idx) => (
                 <li key={idx}>{point}</li>
               ))}
@@ -281,35 +351,17 @@ const CoursesSection = () => {
 
             {/* Button */}
             <button
-            onClick={() => handleLearnMore(course.path)}
-            className="mt-auto w-full bg-[#127DC8] hover:bg-[#127DC9] text-white py-2 rounded-xl font-semibold transition duration-300 shadow-md shadow-blue-300/40 text-sm sm:text-base"
-          >
-            Learn More
-          </button>
-          
+              onClick={() => handleLearnMore(course.path)}
+              className="mt-auto w-full bg-gradient-to-r from-blue-600 to-pink-500 hover:from-blue-700 hover:to-pink-600 text-white py-2 rounded-xl font-semibold transition-all duration-300 shadow-md"
+            >
+              Learn More
+            </button>
           </div>
-        ))}
-      </div>
-
-      {/* SEO Schema Markup */}
-      <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "name": "Courses",
-          "url": "https://codevibeinnovation.com/courses",
-          "itemListElement": courses.map((course, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "name": course.title,
-            "url": `https://codevibeinnovation.com/courses/${encodeURIComponent(course.path)}`
-          }))
-        })}
-      </script>
-    </Helmet>
-    
+        </motion.div>
+      ))}
     </div>
+  </div>
+  
     
     </div>
   );

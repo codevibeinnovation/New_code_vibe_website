@@ -10,6 +10,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    // Close mobile menu on link click (your existing code)
     const handleLinkClick = () => setIsMobileMenuOpen(false);
     const mobileLinks = document.querySelectorAll('#mobile-menu a');
     mobileLinks.forEach(link => link.addEventListener('click', handleLinkClick));
@@ -18,6 +19,18 @@ const Navbar = () => {
     };
   }, []);
 
+  // New effect to disable scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+  
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Courses', path: '/courses' },

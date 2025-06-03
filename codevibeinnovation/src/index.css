@@ -6,10 +6,57 @@
     opacity: 0;
   }
 }
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+}
+.animate-blob {
+  animation: blob 6s infinite ease-in-out;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
 
 .blinking-cursor {
   display: inline-block;
   width: 1ch;
   color: #1E3A8A; /* match your text color */
   animation: blink 1s step-start infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-[float_3s_ease-in-out_infinite] {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2s linear infinite;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
 }

@@ -1,57 +1,66 @@
+import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "./Courses";
+import { FaChevronDown, FaChevronRight, FaArrowRight } from "react-icons/fa";
 
-import React, { useState } from 'react';
-
-import { FaChevronDown} from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa"; // Right arrow icon
-import { FaChevronRight } from "react-icons/fa"; // Replace with your preferred one
 const CourseDetail = () => {
   const { path } = useParams();
-const course = courses.find((c) => c.path === path);
+  const course = courses.find((c) => c.path === path);
 
+ 
 
-
-  if (!course)
-    return (
-      <div className="text-center mt-10 pt-24 text-lg font-semibold text-gray-600">
-        Course not found
-      </div>
-    );
+  const [openModules, setOpenModules] = useState({});
+  useEffect(() => {
+    if (course?.content?.moduleContent) {
+      const allOpen = {};
+      Object.keys(course.content.moduleContent).forEach((_, index) => {
+        allOpen[index] = true;
+      });
+      setOpenModules(allOpen);
+    }
+  }, [course]);
+  
+  // Add this here 👇
+  const toggleModule = (index) => {
+    setOpenModules((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+  
+  
 
   return (
     <div className="pt-20">
-    {/* Hero Image with Breadcrumb */}
-    <div className="relative w-full h-[60vh] sm:h-[50vh] md:h-[60vh] lg:h-[60vh] overflow-hidden">
-    <img
-      src={course.image}
-      alt={course.title}
-      className="w-full h-full object-cover"
-    />
-  
-    {/* Gradient Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-  
-    {/* Breadcrumb */}
-    <div className="absolute bottom-6 left-4 sm:left-6 text-white text-lg sm:text-xl md:text-2xl font-medium transition-transform duration-300 transform hover:scale-105">
-      <span>Home</span>
-      <span className="mx-2">/</span>
-      <span>Course</span>
-      <span className="mx-2">/</span>
-      <span>{course.title}</span>
+    {/* Hero Section */}
+    <div className="relative w-full h-[60vh] overflow-hidden">
+      <img
+        src={course.image}
+        alt={course.title}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" />
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
+        <h1 className="text-3xl sm:text-5xl font-bold drop-shadow-lg">{course.title}</h1>
+        <div className="mt-4 flex items-center gap-2 text-sm sm:text-base text-yellow-300 bg-white/10 px-4 py-2 rounded-full shadow-md">
+          <span className="hover:underline cursor-pointer">Home</span>
+          <span className="text-yellow-200">/</span>
+          <span className="hover:underline cursor-pointer">Courses</span>
+          <span className="text-yellow-200">/</span>
+          <span className="font-semibold">{course.title}</span>
+        </div>
+      </div>
     </div>
-  </div>
   
-
-    {/* Main Content */}
-    <div className="max-w-5xl mx-auto p-6 sm:p-8 pt-20 pb-12 rounded-xl">
+    {/* Course Detail Content */}
+    <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-16 pb-20">
       {/* Title */}
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-6">
+      <h2 className="text-4xl font-extrabold text-blue-900 mb-6 border-l-4 border-yellow-400 pl-4">
         {course.title}
-      </h1>
-
+      </h2>
+  
       {/* Logos */}
-      <div className="flex flex-wrap gap-6 mb-8">
+      <div className="flex flex-wrap gap-6 mb-10">
         {course.logos.map((logo, idx) =>
           logo.startsWith("http") ? (
             <img
@@ -70,115 +79,88 @@ const course = courses.find((c) => c.path === path);
           )
         )}
       </div>
-
+  
       {/* Description */}
-      <p className="text-lg text-blue-900 mb-10 leading-relaxed hover:text-blue-800 transition-colors duration-300">
+      <p className="text-lg text-gray-800 mb-10 leading-relaxed hover:text-blue-800 transition-colors duration-300">
         {course.description}
       </p>
-
-      {/* Overview */}
-      <div className="space-y-8 mb-12">
-  {/* What You Can Do */}
-  <div>
-  <h3 className="text-2xl font-semibold text-blue-800 mb-2">What You Can Do:</h3>
-  <ul className="pl-0 text-blue-900 space-y-2">
-    {course.overview.whatYouCanDo.map((item, idx) => (
-      <li key={idx} className="flex items-start text-lg hover:text-blue-800">
-        <FaArrowRight className="text-dark-blue mr-2 mt-1 w-4 h-4" />
-        <span>{item}</span>
-      </li>
-    ))}
-  </ul>
-</div>
-
-
-  {/* Who Should Attend */}
-  <div>
-    <h3 className="text-2xl font-semibold text-blue-800 mb-2">Who Should Attend:</h3>
-    <ul className="pl-0 text-blue-900 space-y-2">
-      {course.overview.prerequisites.map((item, idx) => (
-        <li key={idx} className="flex items-start text-lg hover:text-blue-800">
-          <FaArrowRight className="text-dark-blue mr-2 mt-1" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</div>
-
-
-      {/* Divider */}
-      <hr className="border-gray-300 my-10" />
-
-      {/* Course Content */}
-   <div className="space-y-6 px-4 sm:px-6 lg:px-12">
-  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-blue-900 hover:scale-105 transition-transform duration-300">
-    Course Content
-  </h2>
-
-  {Object.entries(course.content.moduleContent).map(([moduleTitle, topics], index) => {
-    const [open, setOpen] = useState(false);
-
-    return (
-      <div
-        key={index}
-        className="bg-blue-50 rounded-xl shadow-md transition-all duration-300"
-      >
-        {/* Module Header */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="w-full flex justify-between items-center p-4 sm:p-6 lg:p-8 text-left group hover:bg-blue-100 transition-all duration-300"
-        >
-          <h3 className="text-sm sm:text-sm lg:text-xl font-semibold text-blue-900 group-hover:text-blue-800">
-            {moduleTitle}
-          </h3>
-          <span className="text-blue-700 transition-transform duration-300">
-            {open ? <FaChevronDown className="w-5 h-5" /> : <FaChevronRight className="w-5 h-5" />}
-          </span>
-        </button>
-
-        {/* Module Topics */}
-        {open && (
-          <ul className="px-6 pb-6 text-blue-900 space-y-2">
-            {topics.map((topic, topicIdx) => (
-              <li
-                key={topicIdx}
-                className="flex items-start text-sm sm:text-base md:text-lg hover:text-blue-800"
-              >
-                <FaChevronRight className="mr-2 sm:mr-3 text-dark-blue w-4 h-4 sm:w-5 sm:h-5 mt-1" />
-                <span>{topic}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    );
-  })}
-</div>
-
-      {/* Offerings Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-16">
-        {/* We Offer */}
-        <div className="p-6 bg-blue-50 rounded-xl shadow-lg hover:bg-blue-100 hover:scale-105 transition-all duration-300">
-          <h3 className="text-2xl font-semibold text-blue-900 mb-4">We Offer:</h3>
-          <ul className="list-disc pl-6 text-blue-900 space-y-2">
-            {course.overview.weOffer.map((item, idx) => (
-              <li key={idx} className="flex items-center text-lg hover:text-blue-800">
-                <FaArrowRight className="mr-3 text-dark-blue" />
-                {item}
+  
+      {/* Overview Sections */}
+      <div className="grid sm:grid-cols-2 gap-12 mb-12">
+        <div>
+          <h3 className="text-2xl font-semibold text-blue-800 mb-4">What You Can Do:</h3>
+          <ul className="space-y-3">
+            {course.overview.whatYouCanDo.map((item, idx) => (
+              <li key={idx} className="text-lg text-blue-900 bg-blue-50 rounded-md px-4 py-2 shadow hover:bg-blue-100 transition">
+                <span className="font-medium text-blue-700">✔</span> {item}
               </li>
             ))}
           </ul>
         </div>
-
-        {/* Training Includes */}
-        <div className="p-6 bg-blue-50 rounded-xl shadow-lg hover:bg-blue-100 hover:scale-105 transition-all duration-300">
+        <div>
+          <h3 className="text-2xl font-semibold text-blue-800 mb-4">Who Should Attend:</h3>
+          <ul className="space-y-3">
+            {course.overview.prerequisites.map((item, idx) => (
+              <li key={idx} className="text-lg text-blue-900 bg-blue-50 rounded-md px-4 py-2 shadow hover:bg-blue-100 transition">
+                <span className="font-medium text-blue-700">🎯</span> {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+  
+      {/* Divider */}
+      <hr className="border-gray-300 my-10" />
+  
+      {/* Course Content */}
+      <div className="space-y-6">
+        <h2 className="text-3xl font-semibold text-blue-900 mb-6">Course Content</h2>
+  
+        {Object.entries(course.content.moduleContent).map(([moduleTitle, topics], index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl border border-blue-200 shadow-md"
+          >
+            <button
+              onClick={() => toggleModule(index)}
+              className="w-full flex justify-between items-center p-5 text-left  transition"
+            >
+              <h3 className="text-xl font-semibold text-blue-900">{moduleTitle}</h3>
+              <span className="text-blue-700 text-2xl">
+                {openModules[index] ? '-' : '+'}
+              </span>
+            </button>
+            {openModules[index] && (
+              <ul className="px-6 pb-6 space-y-2 text-blue-900">
+                {topics.map((topic, idx) => (
+                  <li key={idx} className="text-base bg-blue-50 px-4 py-2 rounded-md hover:bg-blue-100 transition">
+                    📘 {topic}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+  
+      {/* Offerings Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-16">
+        <div className="p-6 bg-white border border-blue-200 rounded-xl shadow hover:bg-blue-50 transition-all duration-300">
+          <h3 className="text-2xl font-semibold text-blue-900 mb-4">We Offer:</h3>
+          <ul className="space-y-3">
+            {course.overview.weOffer.map((item, idx) => (
+              <li key={idx} className="text-lg bg-blue-50 px-4 py-2 rounded-md text-blue-900 hover:bg-blue-100 transition">
+                💡 {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="p-6 bg-white border border-blue-200 rounded-xl shadow hover:bg-blue-50 transition-all duration-300">
           <h3 className="text-2xl font-semibold text-blue-900 mb-4">Training Includes:</h3>
-          <ul className="list-disc pl-6 text-blue-900 space-y-2">
+          <ul className="space-y-3">
             {course.overview.trainingIncludes.map((item, idx) => (
-              <li key={idx} className="flex items-center text-lg hover:text-blue-800">
-                <FaArrowRight className="mr-3 text-dark-blue" />
-                {item}
+              <li key={idx} className="text-lg bg-blue-50 px-4 py-2 rounded-md text-blue-900 hover:bg-blue-100 transition">
+                 {item}
               </li>
             ))}
           </ul>
@@ -186,6 +168,8 @@ const course = courses.find((c) => c.path === path);
       </div>
     </div>
   </div>
+  
+  
   );
 };
 

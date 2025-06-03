@@ -882,7 +882,7 @@ export const courses = [
   path:"DatabaseAdministratorcourse",
   badge: "Beginner to Advanced",
   description:
-    "Master full-stack web development using MongoDB, Express.js, React.js, and Node.js. This hands-on course covers everything from frontend design with React to backend APIs and database integration, culminating in a real-world MERN stack project.",
+    "A Data Administrator, often called a Database Administrator (DBA), manages and maintains an organization's data infrastructure, ensuring data integrity, security, and accessibility. They are responsible for designing, implementing, and maintaining database systems, as well as ensuring data is stored and retrieved correctly.",
   category: "Full Stack Development",
   content: {
     courseOverview: [
@@ -899,46 +899,186 @@ export const courses = [
       "MERN Stack Project: Blog Application / E-commerce Platform"
     ],
     moduleContent: {
-      "Module 4: PostgreSQL": [
-        "What is PostgreSQL?",
-        "Installing PostgreSQL and pgAdmin",
-        "PostgreSQL Architecture",
-        "Creating Databases and Tables",
-        "Constraints and Data Types",
-        "CRUD Operations",
-        "Advanced Querying (GROUP BY, HAVING, LIKE, ILIKE)",
-        "Joins and Subqueries",
-        "Arrays, JSON, HSTORE, CASE, COALESCE",
-        "Views, Functions, PL/pgSQL",
-        "Indexes and Performance Tuning",
-        "User Roles, Backups, Production Deployment"
+      "MySQL": [
+  "Module 1: Introduction to MySQL",
+  "(i) What is MySQL?",
+  "(ii) MySQL vs. Other RDBMS (like PostgreSQL, Oracle, SQL Server)",
+  "(iii) Installing MySQL (Windows/Linux/macOS)",
+  "(iv) Introduction to MySQL Workbench / phpMyAdmin",
+  "(v) Understanding Client-Server Architecture",
+  "Module 2: SQL Basics",
+  "(i) Databases, Tables, and Records",
+  "(ii) Data Types in MySQL",
+  "(iii) Creating Databases and Tables",
+  "(iv) Inserting Data into Tables",
+  "(v) Retrieving Data with SELECT",
+  "(vi) Filtering Data using WHERE",
+  "(vii) Sorting Results with ORDER BY",
+  "(viii) Limiting Results with LIMIT",
+  "Module 3: SQL Functions & Clauses",
+  "(i) Aggregate Functions: COUNT(), SUM(), AVG(), MIN(), MAX()",
+  "(ii) Grouping Data with GROUP BY",
+  "(iii) Filtering Groups with HAVING",
+  "(iv) Built-in Functions: String, Date, Numeric",
+  "(v) Aliases using AS",
+  "Module 4: Data Manipulation",
+  "(i) INSERT, UPDATE, DELETE",
+  "(ii) Conditional Insert/Update",
+  "(iii) Importing and Exporting Data (CSV, SQL)",
+  "Module 5: Joins and Subqueries",
+  "(i) Understanding Table Relationships",
+  "(ii) INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN",
+  "(iii) Cross Join and Self Join",
+  "(iv) Subqueries (Single-row, Multi-row, Correlated)",
+  "(v) Using Joins vs. Subqueries",
+  "Module 6: Constraints and Indexing",
+  "(i) Primary Key, Foreign Key",
+  "(ii) NOT NULL, UNIQUE, DEFAULT, CHECK",
+  "(iii) Indexes: Creating, Dropping, and Best Practices",
+  "Module 7: Advanced Queries",
+  "(i) Case Statements",
+  "(ii) Views: Creating and Using",
+  "(iii) Stored Procedures and Functions",
+  "(iv) Triggers and Events",
+  "(v) Transactions: COMMIT, ROLLBACK, SAVEPOINT",
+  "Module 8: User Management and Security",
+  "(i) Creating Users and Setting Permissions",
+  "(ii) GRANT, REVOKE, and Roles",
+  "(iii) Backing Up and Restoring Databases",
+  "(iv) Security Best Practices",
+  "Module 9: Performance Optimization",
+  "(i) Query Optimization Techniques",
+  "(ii) Understanding Execution Plan",
+  "(iii) Caching Strategies",
+  "(iv) Table Partitioning Basics"
+]
+,
+      "PostgreSQL": [
+        "Module 1: Introduction to NoSQL and MongoDB",
+"(i). What is NoSQL?",
+"(ii). Types of NoSQL databases",
+"(iii). Introduction to MongoDB",
+"(iv). Differences between MongoDB and RDBMS",
+"(v). Use cases of MongoDB",
+"Module 2: Installation and Setup",
+"(i). Installing MongoDB on Windows/Linux/macOS",
+"(ii). MongoDB Atlas (cloud setup)",
+"(iii). MongoDB Compass GUI",
+"(iv). Mongo Shell introduction",
+"(v). Connecting to a MongoDB database",
+"Module 3: MongoDB Basics",
+"(i).Understanding MongoDB architecture",
+"(ii). Databases, Collections, and Documents",
+"(iii). BSON vs JSON",
+"(iv). Data types in MongoDB",
+"Module 4: CRUD Operations",
+"(i).Creating Databases and Collections",
+"(ii). Inserting Documents (insertOne, insertMany)",
+"(iii). Reading Documents (find, findOne, projections)",
+"(iv). Updating Documents (updateOne, updateMany, replaceOne)",
+"(v). Deleting Documents (deleteOne, deleteMany)",
+"(vi).Query Operators (comparison, logical, element, etc.)",
+"Module 5: Indexing",
+"(i).Importance of Indexes",
+"(ii). Creating Indexes",
+"(iii). Compound Indexes",
+"(iv). Text Indexes",
+"(v). Index Performance and Explain Plans",
+
+"Module 6: Aggregation Framework",
+"(i).	Introduction to Aggregation",
+"(ii).	Aggregation Pipeline",
+"(iii).	Common Operators: $match, $group, $project, $sort, $limit",
+"(iv).	Use cases of Aggregation",
+"Module 7: Data Modeling in MongoDB",
+"(i).	Schema design principles",
+"(ii).	Embedding vs Referencing",
+"(iii).	One-to-One, One-to-Many, and Many-to-Many relationships",
+"(iv).	Data normalization vs denormalization",
+"Module 8: Working with MongoDB in Applications",
+"(i).	MongoDB with Python (PyMongo)",
+"(ii).	MongoDB with Java (MongoDB Java Driver)",
+"(iii).	CRUD operations in real-world apps",
+"(iv).	Error handling and best practices",
+"Module 9: Performance Tuning and Best Practices",
+"(i).	Query optimization",
+"(ii).	Caching strategies",
+"(iii).	Monitoring with MongoDB Atlas and Ops Manager",
+"(iv).	Sharding and Replication Overview",
+
+"Module 10: Capstone Project",
+"(i).	Designing and building a full-stack application using MongoDB",
+"(ii).	Performance review and optimization",
+"(iii).	Deployment to MongoDB Atlas"
+
       ],
-      "Module 5: MySQL": [
-        "What is MySQL?",
-        "Installing MySQL and Workbench",
-        "Client-Server Architecture",
-        "Creating Databases and Tables",
-        "Data Types, SELECT, WHERE, ORDER BY, LIMIT",
-        "SQL Functions and Grouping",
-        "CRUD Operations and Data Export/Import",
-        "Joins and Subqueries",
-        "Constraints and Indexing",
-        "Advanced Queries, Views, Stored Procedures",
-        "Triggers, Transactions, User Management",
-        "Performance Optimization and Projects"
-      ],
-      "Module 6: MongoDB": [
-        "What is NoSQL and MongoDB?",
-        "Installing MongoDB, Compass, Atlas",
-        "MongoDB Architecture and BSON",
-        "Databases, Collections, Documents",
-        "CRUD Operations and Query Operators",
-        "Indexing and Aggregation Framework",
-        "Data Modeling (Embedded vs Referenced)",
-        "MongoDB with Python and Java",
-        "Performance Tuning, Monitoring, Sharding",
-        "Capstone Project with MongoDB Atlas"
-      ]
+     
+      "MongoDB": [
+  "Module 1: Introduction to NoSQL and MongoDB",
+  "(i) What is NoSQL?",
+  "(ii) Types of NoSQL databases",
+  "(iii) Introduction to MongoDB",
+  "(iv) Differences between MongoDB and RDBMS",
+  "(v) Use cases of MongoDB",
+
+  "Module 2: Installation and Setup",
+  "(i) Installing MongoDB on Windows/Linux/macOS",
+  "(ii) MongoDB Atlas (cloud setup)",
+  "(iii) MongoDB Compass GUI",
+  "(iv) Mongo Shell introduction",
+  "(v) Connecting to a MongoDB database",
+
+  "Module 3: MongoDB Basics",
+  "(i) Understanding MongoDB architecture",
+  "(ii) Databases, Collections, and Documents",
+  "(iii) BSON vs JSON",
+  "(iv) Data types in MongoDB",
+
+  "Module 4: CRUD Operations",
+  "(i) Creating Databases and Collections",
+  "(ii) Inserting Documents (insertOne, insertMany)",
+  "(iii) Reading Documents (find, findOne, projections)",
+  "(iv) Updating Documents (updateOne, updateMany, replaceOne)",
+  "(v) Deleting Documents (deleteOne, deleteMany)",
+  "(vi) Query Operators (comparison, logical, element, etc.)",
+
+  "Module 5: Indexing",
+  "(i) Importance of Indexes",
+  "(ii) Creating Indexes",
+  "(iii) Compound Indexes",
+  "(iv) Text Indexes",
+  "(v) Index Performance and Explain Plans",
+
+  "Module 6: Aggregation Framework",
+  "(i) Introduction to Aggregation",
+  "(ii) Aggregation Pipeline",
+  "(iii) Common Operators: $match, $group, $project, $sort, $limit",
+  "(iv) Use cases of Aggregation",
+
+  "Module 7: Data Modeling in MongoDB",
+  "(i) Schema design principles",
+  "(ii) Embedding vs Referencing",
+  "(iii) One-to-One, One-to-Many, and Many-to-Many relationships",
+  "(iv) Data normalization vs denormalization",
+
+  "Module 8: Working with MongoDB in Applications",
+  "(i) MongoDB with Python (PyMongo)",
+  "(ii) MongoDB with Java (MongoDB Java Driver)",
+  "(iii) CRUD operations in real-world apps",
+  "(iv) Error handling and best practices",
+
+  "Module 9: Performance Tuning and Best Practices",
+  "(i) Query optimization",
+  "(ii) Caching strategies",
+  "(iii) Monitoring with MongoDB Atlas and Ops Manager",
+  "(iv) Sharding and Replication Overview",
+
+  "Module 10: Capstone Project",
+  "(i) Designing and building a full-stack application using MongoDB",
+  "(ii) Performance review and optimization",
+  "(iii) Deployment to MongoDB Atlas"
+]
+
     }
   },
   overview: {
@@ -1131,8 +1271,7 @@ export const courses = [
         "What is cors and it’s function"
       ],
       "Module 9 - Connecting with Database": [
-        "Introduction to MySQL",
-        "Connect with MySQL",
+       
         "Introduction to MongoDB",
         "Connect with MongoDB",
         "Defining a schema",
@@ -1189,92 +1328,321 @@ export const courses = [
 ,
 {
   id: 9,
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSahPG6mtKWq8UfADVGOmu5tKETISz4CoEnI8hArJF84Yq7VqPYBg&s=10&ec=72940545",
-  title: "PPT Making,Documentation & MS Word Mastery",
-  path:"PptMakingDocumentation",
-  badge: "Beginner Friendly",
+  image: "https://cdn.educba.com/academy/wp-content/uploads/2019/08/Advanced-Excel-Courses.png",
+  title: "Advanced Excel with AI",
+  path: "AdvancedExcelWithAI",
+  badge: "Advanced Level",
   description:
-    "This course teaches students and professionals how to effectively create presentations, write structured documentation, and master MS Word tools. Ideal for academic, professional, and project-based needs, including final-year reports, resumes, and business presentations.",
-  category: "Productivity & Office Tools",
+    "Master Advanced Excel skills with integrated AI tools. This hands-on course covers data analysis, Power Query, VBA automation, AI forecasting, and Power BI insights – ideal for professionals working with large datasets and real-world business needs.",
+  category: "Data Analysis & Business Intelligence",
   content: {
     courseOverview: [
-      "Basics of Microsoft Word: Interface, Menus & Shortcuts",
-      "Formatting Text, Paragraphs, and Pages",
-      "Creating Tables, Lists, and Headers/Footers",
-      "Inserting Charts, Images, and Shapes",
-      "Page Setup, Printing & Exporting Documents",
-      "Creating Professional Documentation (Reports, Letters, Resumes)",
-      "Understanding Document Styles and Templates",
-      "Introduction to PowerPoint: Interface and Slide Design",
-      "Slide Layouts, Transitions, and Animations",
-      "Creating Visual Presentations with Charts, Images, SmartArt",
-      "Best Practices for Slide Content and Formatting",
-      "Delivering Presentations: Tips and Tools",
-      "Real-world Project: Create Resume, Project Report & Presentation"
+      "Module 1 - Advanced Excel Fundamentals Refresher",
+      "Module 2 - Data Analysis & Visualization",
+      "Module 3 - Automation with Macros and VBA",
+      "Module 4 - Introduction to AI in Excel",
+      "Module 5 - AI-powered Data Analysis Techniques",
+      "Module 6 - Power BI Integration and AI Insights",
+      "Module 7 - Advanced Data Modeling & Predictive Analytics",
+      "Module 8 - Custom AI Solutions & Automation",
+      "Module 9 - Real-world Projects & Case Studies",
+      "Module 10 - Tips, Tricks & Best Practices"
     ],
     moduleContent: {
-      "PPT Making + Documentation + Word": [
-        // Presentation Skills
-        "Introduction to Presentation Skills: Importance, objectives, and types of presentations",
-        "Understanding the Purpose and Audience: Tailoring content based on target audience and context",
-        "Storyboarding and Structuring Presentations: Opening, body, and closing techniques",
-        "Design Principles for Effective Slides: Consistency, simplicity, contrast, alignment, repetition, proximity",
-        "Using Visuals, Charts, and Media: When and how to use graphs, images, videos, and animations effectively",
-        "Overcoming Stage Fear and Building Confidence: Techniques for public speaking and handling Q&A sessions",
-      
-        // PPT Formatting
-        "PPT Formatting Best Practices: Font styles, sizes, color schemes, and spacing",
-        "Creating Impactful Slide Decks: Title slides, section dividers, content slides, and summary slides",
-        "Transitions and Animations: Subtle vs. dramatic effects and professional usage",
-        "Using Templates and Master Slides: Ensuring consistency across all slides",
-      
-        // Project Reports & Documentation
-        "Structure and Flow of Project Reports: Title page, abstract, introduction, methodology, results, conclusion",
-        "Documentation Standards and Formatting: Margins, headers, footers, page numbering, referencing styles (APA, IEEE, etc.)",
-        "Plagiarism Awareness and Ethical Writing: Importance of originality and citing sources correctly",
-      
-        // MS Word Usage
-        "MS Word Usage Essentials: Interface overview, creating and saving documents",
-        "Using Styles, Headings, and Table of Contents: Navigating and organizing documents",
-        "Inserting Images, Tables, and Charts: Formatting and positioning within reports",
-        "Adding Comments, Track Changes, and Reviewing Tools: Collaborative document editing",
-        "Creating Bibliographies and Citations with Word Tools",
-        "Exporting and Printing Professional Documents: PDF export, print settings, and page setup"
+      "Module 1 - Advanced Excel Fundamentals Refresher": [
+        "Review of essential Excel functions (IF, VLOOKUP/XLOOKUP, INDEX-MATCH)",
+        "Working with Tables and Structured References",
+        "Named Ranges and Dynamic Named Ranges",
+        "Advanced Conditional Formatting techniques"
+      ],
+      "Module 2 - Data Analysis & Visualization": [
+        "Advanced PivotTables and PivotCharts",
+        "Power Query: Importing, Cleaning, and Transforming Data",
+        "Power Pivot and Data Models: Intro to DAX",
+        "Advanced charting: Combination charts, Sparklines, Interactive Dashboards"
+      ],
+      "Module 3 - Automation with Macros and VBA": [
+        "Recording and editing macros",
+        "Introduction to VBA editor and programming basics",
+        "Automating repetitive tasks with VBA",
+        "Creating custom functions and user forms"
+      ],
+      "Module 4 - Introduction to AI in Excel": [
+        "Overview of AI features in Excel (Ideas, Data Types, Insights)",
+        "Using Excel’s AI-powered Data Types and Smart Templates",
+        "Natural Language Queries with “Analyze Data”",
+        "AI-driven formula suggestions and autocomplete"
+      ],
+      "Module 5 - AI-powered Data Analysis Techniques": [
+        "Using AI-powered forecasting tools",
+        "Sentiment analysis & text analytics with formulas/add-ins",
+        "Integrating with Microsoft Azure AI services",
+        "Using Python and Jupyter notebooks in Excel (Excel 365)"
+      ],
+      "Module 6 - Power BI Integration and AI Insights": [
+        "Connecting Excel to Power BI",
+        "Creating AI visuals in Power BI from Excel data",
+        "Using Power BI’s AI features: Key Influencers, Decomposition Trees, Anomaly Detection",
+        "Publishing and sharing AI-enhanced reports"
+      ],
+      "Module 7 - Advanced Data Modeling & Predictive Analytics": [
+        "Creating predictive models with Excel + AI",
+        "Regression analysis and ML basics",
+        "Scenario analysis and Solver optimization",
+        "Time series forecasting with Excel + AI"
+      ],
+      "Module 8 - Custom AI Solutions & Automation": [
+        "Building custom AI models using Power Platform",
+        "Automating workflows with Power Automate + Excel",
+        "Using Office Scripts for enhanced automation",
+        "Integrating with AI chatbots & virtual assistants"
+      ],
+      "Module 9 - Real-world Projects & Case Studies": [
+        "Project: Sales forecasting using Excel AI",
+        "Customer sentiment analysis with text data",
+        "Inventory optimization and automation case study",
+        "Financial modeling with AI-powered insights"
+      ],
+      "Module 10 - Tips, Tricks & Best Practices": [
+        "Troubleshooting complex formulas and AI errors",
+        "Performance optimization for large datasets",
+        "Security and privacy with AI in Excel",
+        "Resources and further learning paths"
       ]
-      
     }
-    
   },
   overview: {
     whatYouCanDo: [
-      "Write professional project documentation",
-      "Design clean, engaging PowerPoint presentations",
-      "Format reports and resumes for academic or corporate use",
-      "Confidently use MS Word & PowerPoint for various needs"
+      "Develop fully functional web applications",
+      "Design responsive frontend interfaces using React",
+      "Build and deploy secure REST APIs",
+      "Work with databases and handle data persistence",
+      "Deploy full-stack applications to production"
     ],
-    prerequisites: ["Basic computer literacy"],
+    prerequisites: ["Basic Excel knowledge (functions, formulas)"],
     weOffer: [
       "Classroom Training",
       "Online Training",
       "Corporate Training",
-      "Weekend Training",
-      "One to One Training",
-      "Project-Based Learning"
+      "Weekend Batches",
+      "One-on-One Mentorship",
+      "Project-based Learning"
     ],
     trainingIncludes: [
-      "Hands-on Practical Sessions",
-      "Real-time Project Work (Resume + Report + PPT)",
-      "Templates & Resources",
+      "Live Project Work",
+      "Access to Excel & Power BI files",
+      "Source Code & Templates",
+      "Resume Building Support",
       "Course Completion Certificate",
-      "Support & Mentorship",
-      "Job Assistance (on documentation profiles)"
+      "Placement/Internship Assistance"
     ]
   },
-  
+  rating: {
+    average: 4.8,
+    sources: {
+      Justdial: 620,
+      Google: 340,
+      Sulekha: 70
+    }
+  },
   logos: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
-    "https://cdn-icons-png.flaticon.com/512/732/732221.png", // MS Word
-    "https://cdn-icons-png.flaticon.com/512/732/732228.png"  // PowerPoint
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/1/10/Power_BI_Logo.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/5f/Office_Scripts_Logo.png"
+  ]
+}
+
+,
+{
+  id: 9,
+  image: "https://cdn.educba.com/academy/wp-content/uploads/2019/08/Advanced-Excel-Courses.png",
+  title: "DataScience",
+  path: "DataScience",
+  badge: "Advanced Level",
+  description:
+    "Master Advanced Excel skills with integrated AI tools. This hands-on course covers data analysis, Power Query, VBA automation, AI forecasting, and Power BI insights – ideal for professionals working with large datasets and real-world business needs.",
+  category: "Data Analysis & Business Intelligence",
+  content: {
+    courseOverview: [
+      "Module 1 - Python Programming",
+      "Module 2 - Machine Learning",
+      "Module 3 - Deep Learning",
+      "Module 4 - Advance Excel",
+      "Module 5 - Data Visualization",
+      "Module 6 - Tableau",
+      "Module 7 - NLP",
+      "Module 8 - Chatbots",
+      "Module 9 - Statistics"
+     
+    ],
+    moduleContent: {
+      "Module 1 - Python Programming ": [
+        "Introduction to Programming Languages ",
+"Python Real-Time IDEs ",
+"Di	erent modes of Python ",
+"First python Program ",
+"Python File Extensions ",
+"Python Data Types ",
+"Command Line Arguments ",
+"Python Operators",
+"Control Statements",
+"Strings",
+"List Data Structure",
+"Working with Python Arrays",
+"Python Tuples",
+"Set Collection",
+"Dictionary Collection",
+"Functions",
+"Python Modules and Packages",
+"OOPs – Classes & Objects ",
+"Exception Handling & Types of Errors",
+"Regular Expressions ",
+"Files in Python", 
+"Date & Time Module",
+"Python Data Base Communications(PDBC)", 
+"Data Analytics Modules",
+"Python NumPy",
+"Python Pandas "
+
+      ],
+      "Module 2 - Machine Learning": [
+        "Introduction to Machine Learning",
+"Exploratory Data Analysis(EDA)", 
+"Supervised Machine Learning (Regression)",
+"Logistic Regression", 
+"Ordinal Regression", 
+"Naïve Bayes Classifier Algorithm", 
+"Support Vector Machine", 
+"Decision Tree", 
+"K-Nearest Neighbor", 
+"Random Forest", 
+"Bagging and Boosting", 
+"Dimensionality Reduction", 
+"Time Series Analysis", 
+"ARIMA, SARIMA and ARMA", 
+"Clustering", 
+"Hyper Parameter Optimization" 
+
+      ],
+      "Module 3 - Deep Learning": [
+        "Deep Learning Introduction", 
+"Artificial Neural Network",
+"Optimization Techniques", 
+"Recurrent Neural Network (RNN)",
+"Convolution Neural Network (CNN)", 
+"Auto Encoders",
+"Tensorflow"
+
+      ],
+      "Module 4 - Advance Excel": [
+        "Pivot tables and pivot charts", 
+"Conditional formatting", 
+"Remove duplicates",
+"XLOOKUP",
+"IFERROR", 
+"MATCH",
+"COUNTBLANK",
+"DAYS and NETWORKDAYS", 
+"RANK", 
+"SUMPRODUCT" 
+
+      ],
+      "Module 5 - Data Visualization": [
+        "Seaborn visualization", 
+"Matplotlib visualization", 
+"Pre-processing algorithms", 
+"Regression",
+"Linear regression", 
+"Logistic regression"
+
+      ],
+      "Module 6 - Tableau": [
+        "What is Tableau? Why Tableau?", 
+"History of Tableau", 
+"Characteristics of Tableau", 
+"Installation Step", 
+"Versions of Tableau", 
+"What is VizQL",
+"Use of VizQL in Tableau", 
+"Tableau Architecture and its component"
+
+      ],
+      "Module 7 - NLP": [
+        "Basics of Natural Language Processing", 
+"Machine Learning Modeling- Navie Bayies", 
+"Word Net and Synsets", 
+"Transformation Models-BERT",
+"LSTM model-RNN",
+ "Corpus",
+"Regular expressions for over pattern" 
+
+      ],
+      "Module 8 - Chatbots": [
+        "Chat Bot Architecture", 
+"Under standing Chat Bots Architecture", 
+"Chat Bot Development",
+"Developing chat Bot Using Python", 
+"Developing chat Bot using Cloud" 
+
+      ],
+      "Module 9 - Statistics": [
+        "Statistics Introduction", 
+"Measure of Center", 
+"Normal Distribution", 
+"Standard Deviation", 
+"Python range()Function: Built-in",
+"Inferential Statistics", 
+"P-value",
+"ANOVA", 
+"Chi-Square Test", 
+"ARIMA", 
+"Correlation", 
+
+      ],
+     
+    }
+  },
+  overview: {
+    whatYouCanDo: [
+      "Develop fully functional web applications",
+      "Design responsive frontend interfaces using React",
+      "Build and deploy secure REST APIs",
+      "Work with databases and handle data persistence",
+      "Deploy full-stack applications to production"
+    ],
+    prerequisites: ["Basic Excel knowledge (functions, formulas)"],
+    weOffer: [
+      "Classroom Training",
+      "Online Training",
+      "Corporate Training",
+      "Weekend Batches",
+      "One-on-One Mentorship",
+      "Project-based Learning"
+    ],
+    trainingIncludes: [
+      "Live Project Work",
+      "Access to Excel & Power BI files",
+      "Source Code & Templates",
+      "Resume Building Support",
+      "Course Completion Certificate",
+      "Placement/Internship Assistance"
+    ]
+  },
+  rating: {
+    average: 4.8,
+    sources: {
+      Justdial: 620,
+      Google: 340,
+      Sulekha: 70
+    }
+  },
+  logos: [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+   "https://www.trustedtechteam.com/cdn/shop/products/Excel_grande.png?v=1676068154",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIdD07Wmb_onuF5t2hwRKrBH7HYc7fCE0A0A&s",
+
+    
   ]
 },
 {
@@ -1459,24 +1827,68 @@ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo
       "Deploying Flutter Apps to Play Store & App Store",
       "Real-world Project: Mobile App for Task Management or E-commerce"
     ],
-    "moduleContent": {
-      "Flutter": [
-        "Introduction to Flutter and Dart",
-        "Setting Up Flutter SDK and IDE (VS Code, Android Studio)",
-        "Creating Your First Flutter App",
-        "Understanding Widgets and Stateless vs Stateful Widgets",
-        "Layouts in Flutter: Row, Column, Stack, ListView",
-        "State Management in Flutter: setState, Provider, Riverpod",
-        "Handling Forms: TextField, Dropdown, Validation",
-        "Networking: HTTP requests, REST APIs, JSON Parsing",
-        "Working with Firebase: Authentication, Firestore",
-        "Local Storage: Shared Preferences, SQLite",
-        "Custom Widgets and Reusable Components",
-        "Animations in Flutter: Implicit and Explicit Animations",
-        "Flutter Navigation: Push, Pop, Named Routes",
-        "Testing: Unit Testing and Widget Testing",
-        "Debugging and Performance Optimization",
-        "Publishing Flutter Apps on Google Play Store and Apple App Store"
+    moduleContent: {
+     " Module - 1. Introduction to Flutter & Dart": [
+      "What is Flutter?",
+"Flutter vs React Native vs Native",
+"Installing Flutter & setting up IDE (VS Code/Android Studio)",
+"Understanding Flutter architecture",
+"Intro to Dart programming (variables, functions, classes, conditionals)"
+
+      ],
+      "Module - 2. Basic Flutter App Structure": [
+        "main.dart file & runApp()",
+       " Widgets: StatelessWidget vs StatefulWidget",
+"Scaffold, AppBar, Text, Image, Icon"
+      ],
+      "Module - 3. Layout & Styling": [
+        "Row, Column, Stack, Container",
+"Padding, Margin, BoxDecoration",
+"Custom fonts & colors",
+"Theming with ThemeData"
+
+],
+      "Module – 4 Navigation & Routing": [
+        "Navigator.push() / pop()",
+"Named routes",
+"Bottom Navigation Bar & Drawer"
+       
+      ],
+      "Module - 5. User Input & Forms": [
+      
+"TextField, TextEditingController",
+"Forms, validation",
+"Switch, Checkbox, RadioButton"
+
+      ],
+      "Module - 6. State Management (Basic)": [
+        "setState()",
+"Lifting state up",
+"InheritedWidget"
+      ],
+      "Module - 7. Working with Lists & Grid": [
+        "ListView, ListView.builder",
+"GridView",
+"Dynamic list generation"
+
+      ],
+      "Module - 8. Networking & API Integration": [
+        "HTTP package",
+"Fetching data from REST API",
+"JSON parsing",
+"Error handling"
+      ],
+      "Module - 9. State Management (Advanced)": [
+       
+        "Provider (recommended for beginners)",
+"Riverpod / BLoC / GetX (choose one)",
+"Local state vs global state"
+      ],
+      "Module - 10. Local Database & Storage": [
+        "SharedPreferences (key-value)",
+"SQLite using sqflite",
+"Local JSON files"
+
       ]
     }
   },
@@ -1591,7 +2003,126 @@ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1947WuYOc-RqCo-7M25ZaxQjfDzXfe6wR6rZNQTUjbPFMGOB4vg&s=10&ec=72940545",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5UQs-3-OesYgajT-EoA9gib7Om2Pavo-RDgpv2OdN-Q&s&ec=72940545",
   ]
+},
+{
+  id: 15,
+  image: "https://assets.bizclikmedia.net/900/8dc2872cdb3d622f052fee37f0a9b7de:15ca417f19db17b12c677342137eccca/gettyimages-1310426274-0-jpg.webp",
+  title: "Cyber Security",
+  badge: "Advanced",
+  path: "cyber-security",
+  description: "Cyber Security is essential in protecting systems, networks, and data from cyber attacks. This course provides in-depth knowledge of networking fundamentals, protocols, firewalls, cryptography, ethical hacking, and incident response. Gain practical experience to secure digital environments through hands-on labs and simulations.",
+  category: "Security",
+  content: {
+    courseOverview: [
+      "Fundamentals of Cyber Security and Networking",
+      "Network Protocols, Addressing, and Routing",
+      "Wireless Security and IoT Threats",
+      "Encryption, Hashing, and Secure Communication",
+      "Authentication, Access Control, and Firewalls",
+      "Ethical Hacking and Penetration Testing",
+      "Incident Response and Disaster Recovery Planning",
+      "Hands-on Projects and Real-world Simulations"
+    ],
+    moduleContent: {
+      "Module 1 - Introduction to Networking Concepts": [
+        "What is a network?",
+        "Importance and types of Network topologies (star, bus, ring, mesh)",
+        "OSI Model: Layers and functions",
+        "TCP/IP Model overview",
+        "Basic networking devices (router, switch, hub, firewall)"
+      ],
+      "Module 2 - Network Protocols and Addressing": [
+        "IP addressing basics (IPv4 & IPv6)",
+        "Subnetting and subnet masks",
+        "MAC addresses and ARP protocol", 
+        "DHCP and DNS protocols",
+        "TCP vs UDP"
+      ],
+      "Module 3 - Routing and Switching Fundamentals": [
+        "Routing concepts and routing tables",
+        "Static vs dynamic routing",
+        "Switching concepts and VLANs",
+        "Introduction to network routing protocols (RIP, OSPF)"
+      ],
+      "Module 4 - Wireless Networking": [
+        "Wi-Fi standards (802.11 a/b/g/n/ac/ax)",
+        "Wireless security protocols (WEP, WPA, WPA2, WPA3)",
+        "Setting up and securing wireless networks",
+        "Introduction to Bluetooth and IoT devices security risks"
+      ],
+      "Module 5 - Network Security Fundamentals": [
+        "Cybersecurity overview: threats and vulnerabilities",
+        "CIA Triad (Confidentiality, Integrity, Availability)",
+        "Common attack types: phishing, malware, DoS/DDoS",
+        "Basics of firewalls and IDS/IPS"
+      ],
+      "Module 6 - Cryptography Basics": [
+        "Introduction to cryptography",
+        "Symmetric vs asymmetric encryption",
+        "Hashing and digital signatures",
+        "Public Key Infrastructure (PKI) and certificates",
+        "SSL/TLS protocols"
+      ],
+      "Module 7 - Authentication and Access Control": [
+        "Authentication methods (passwords, biometrics, two-factor)",
+        "Access control models (DAC, MAC, RBAC)",
+        "Introduction to AAA (Authentication, Authorization, Accounting)"
+      ],
+      "Module 8 - Firewall and VPN Configuration": [
+        "Firewall types and rules creation",
+        "Introduction to VPNs and secure tunneling",
+        "Configuring VPN clients and servers",
+        "NAT and PAT basics"
+      ],
+      "Module 9 - Ethical Hacking and Penetration Testing": [
+        "Ethical hacking concepts and legal issues",
+        "Reconnaissance and scanning (using tools like Nmap)",
+        "Vulnerability assessment",
+        "Basic exploitation techniques"
+      ],
+      "Module 10 - Incident Response and Security Management": [
+        "Incident response lifecycle",
+        "Disaster recovery and business continuity",
+        "Security auditing and monitoring",
+        "Log analysis and SIEM introduction"
+      ]
+    }
+  },
+  overview: {
+    whatYouCanDo: [
+      "Secure networks and systems from cyber threats",
+      "Perform ethical hacking and penetration testing",
+      "Design firewalls, VPNs, and secure architectures",
+      "Handle real-world incident response scenarios"
+    ],
+    prerequisites: [
+      "Basic understanding of computer networks",
+      "Interest in security concepts and ethical hacking"
+    ],
+    weOffer: [
+      "Online & Offline Training",
+      "Weekend & One-on-One Batches",
+      "Corporate Training Available",
+      "Project-Based Learning"
+    ],
+    trainingIncludes: [
+      "Theory + Hands-on Sessions",
+     
+      "Certificate of Completion",
+      "Doubt Solving Support",
+      "Interview & Resume Guidance"
+    ]
+  },
+  logos: [
+    "https://cdn-icons-png.flaticon.com/512/3986/3986483.png",
+    "https://cdn-icons-png.flaticon.com/512/595/595067.png",
+    "https://cdn-icons-png.flaticon.com/512/2721/2721290.png"
+  ]
 }
+
+
+
+
 
 
 

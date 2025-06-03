@@ -1,330 +1,98 @@
-// import React, { useState } from "react";
-// import { XCircle } from "lucide-react"; // not X, but XCircle for a proper nice icon
-// const internships = [
-//   {
-//     id: 1,
-//     title: "Frontend Developer Intern",
-//     description: "Work on exciting front-end projects to sharpen your UI/UX skills.",
-//     duration: "3 months",
-//     image: "https://img.icons8.com/color/96/react-native.png",
-//   },
-//   {
-//     id: 2,
-//     title: "Backend Developer Intern",
-//     description: "Assist in building robust backend systems and APIs.",
-//     duration: "6 months",
-//     image: "https://img.icons8.com/color/96/nodejs.png",
-//   },
-//   {
-//     id: 3,
-//     title: "Full Stack Developer Intern",
-//     description: "Get hands-on experience with both front-end and back-end development.",
-//     duration: "4 months",
-//     image: "https://img.icons8.com/color/96/source-code.png",
-//   },
-//   {
-//     id: 4,
-//     title: "Mobile App Developer Intern",
-//     description: "Develop cross-platform mobile applications and enhance user engagement.",
-//     duration: "5 months",
-//     image: "https://img.icons8.com/color/96/flutter.png",
-//   },
-//   {
-//     id: 5,
-//     title: "Data Science Intern",
-//     description: "Explore data analytics, machine learning, and AI techniques.",
-//     duration: "6 months",
-//     image: "https://img.icons8.com/color/96/artificial-intelligence.png",
-//   },
-//   {
-//     id: 6,
-//     title: "Python Django Intern",
-//     description: "Learn about continuous integration, deployment, and cloud infrastructure management.",
-//     duration: "4 months",
-//     image: "https://img.icons8.com/color/96/django.png",
-//   },
-//   {
-//     id: 7,
-//     title: "MERN Stack Intern",
-//     description: "Learn about continuous integration, deployment, and cloud infrastructure management.",
-//     duration: "5 months",
-//     image: "https://img.icons8.com/color/96/mongodb.png",
-//   },
-// ];
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Clock, Laptop2,LocateFixed } from "lucide-react";
 
-// const InternshipPage = () => {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-//   const [selectedInternship, setSelectedInternship] = useState(null);
-//   const [successMessage, setSuccessMessage] = useState("");
-
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     phone: "",
-//     resume: null,  // Change to store the file
-//   });
-
-//   const handleApplyClick = (internship) => {
-//     setSelectedInternship(internship);
-//     setIsModalOpen(true);
-//   };
-
-//   const handleCloseModal = () => {
-//     setIsModalOpen(false);
-//   };
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData((prevData) => ({
-//       ...prevData,
-//       [name]: value,
-//     }));
-//   };
-//   const closeModal = () => {
-//     setIsModalOpen(false);
-//     setFormData({ name: "", technology: "", phone: "" });
-//   };
-//   const handleFileChange = (e) => {
-//     const { name, files } = e.target;
-//     setFormData((prevData) => ({
-//       ...prevData,
-//       [name]: files[0],  // Store the selected file
-//     }));
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-  
-//     const data = new FormData();
-//     data.append('internshipTitle', selectedInternship.title); // Dynamic
-//     data.append('name', formData.name);
-//     data.append('email', formData.email);
-//     data.append('phone', formData.phone);
-//     data.append('resume', formData.resume); // Selected file
-  
-//     try {
-//       const response = await fetch('http://localhost:5000/api/internship-apply', {
-//         method: 'POST',
-//         body: data,
-//       });
-  
-//       const result = await response.json();
-//       console.log('Success:', result);
-  
-//       // Set the success message
-//       setSuccessMessage("Application submitted successfully!");
-  
-//       // Optionally, close the modal and clear form
-//       setIsModalOpen(false);
-//       setFormData({
-//         name: "",
-//         email: "",
-//         phone: "",
-//         resume: null,
-//       });
-//     } catch (error) {
-//       console.error('Error:', error);
-//     }
-//   };
-  
-
-
-//   return (
-//     <div className="min-h-screen pt-12 px-4 pb-20 sm:px-6 lg:px-12 bg-white"> 
-//       <div className="max-w-9xl pt-20 mx-auto">
-//         {/* Title */}
-//         <h1
-//         className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center animate__animated animate__fadeInDown text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] via-[#F472B6] via-[#EF4444] to-[#F97316]"
-//       >
-//         Internship Opportunities
-//       </h1>
-//        {/* Success Message */}
-//   {successMessage && (
-//     <div className="text-green-600 text-center font-semibold mb-4">
-//       {successMessage}
-//     </div>
-//   )}
-      
-
-//         {/* Internship Cards */}
-//         <div className="flex flex-col gap-10">
-//         {internships.map((internship) => (
-//           <div key={internship.id} className="flex justify-center">
-//           <div className="flex border border-blue-900 flex-col md:flex-row items-center md:items-start rounded-2xl shadow-md transform hover:scale-105 hover:shadow-[#127DC8] hover:shadow-lg duration-500 p-8 w-full max-w-4xl">
-//               {/* Image */}
-//               <div className="w-28 h-28 mb-4 md:mb-0 md:mr-6 flex-shrink-0">
-//                 <img
-//                   src={internship.image}
-//                   alt={internship.title}
-//                   className="w-full h-full object-contain rounded-xl"
-//                 />
-//               </div>
-      
-//               {/* Text Content */}
-//               <div className="flex flex-col justify-between flex-grow text-center md:text-left">
-//                 <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-2">
-//                   {internship.title}
-//                 </h2>
-//                 <p className="text-blue-900 mb-3 text-base sm:text-lg">
-//                   {internship.description}
-//                 </p>
-//                 <p className="text-blue-900 font-semibold text-base sm:text-lg mb-4 md:mb-0">
-//                   Duration: {internship.duration}
-//                 </p>
-//               </div>
-      
-//               {/* Button */}
-//               <div className="mt-4 md:mt-0 md:ml-6">
-//                 <button
-//                   className="mt-auto w-full bg-gradient-to-r from-[#127DC8] to-[#0E5A9E] hover:from-[#0E5A9E] hover:to-[#127DC8] text-white py-3 px-6 rounded-2xl font-semibold transition duration-300 shadow-md shadow-blue-400/50"
-//                   onClick={() => handleApplyClick(internship)}
-//                 >
-//                   Apply Now
-//                 </button>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-      
-      
-//       </div>
-
-//       {/* Modal for Application Form */}
-//       {isModalOpen && (
-//         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-//           <div className="bg-white p-6 rounded-lg w-full max-w-lg relative">
-//             {/* Close Icon */}
-//             <button
-//             className="absolute top-4 right-4 text-blue-900 transition"
-//             onClick={closeModal}
-//           >
-//             <XCircle size={32} />
-//           </button>
-//             <h2 className="text-2xl font-bold text-center text-blue-900 mb-4">
-//               Apply for {selectedInternship.title}
-//             </h2>
-//             <form onSubmit={handleSubmit}>
-//               <div className="mb-4">
-//                 <label htmlFor="name" className="block text-sm font-medium text-blue-900">Full Name</label>
-//                 <input
-//                   type="text"
-//                   id="name"
-//                   name="name"
-//                   value={formData.name}
-//                   onChange={handleInputChange}
-//                   required
-//                   className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-//                 />
-//               </div>
-//               <div className="mb-4">
-//                 <label htmlFor="email" className="block text-sm font-medium text-blue-900 ">Email</label>
-//                 <input
-//                   type="email"
-//                   id="email"
-//                   name="email"
-//                   value={formData.email}
-//                   onChange={handleInputChange}
-//                   required
-//                   className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-//                 />
-//               </div>
-//               <div className="mb-4">
-//                 <label htmlFor="phone" className="block text-sm font-medium text-blue-900">Phone Number</label>
-//                 <input
-//                   type="tel"
-//                   id="phone"
-//                   name="phone"
-//                   value={formData.phone}
-//                   onChange={handleInputChange}
-//                   required
-//                   className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-//                 />
-//               </div>
-//               <div className="mb-4">
-//                 <label htmlFor="resume" className="block text-sm font-medium text-blue-900">Resume (Upload File)</label>
-//                 <input
-//                   type="file"
-//                   id="resume"
-//                   name="resume"
-//                   onChange={handleFileChange}
-//                   required
-//                   className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-//                 />
-//               </div>
-//               <div className="flex justify-end gap-4">
-//                 <button
-//                   type="submit"
-//                   className="mt-auto w-full bg-[#127DC8] hover:bg-[#127DC9] text-white py-2 rounded-xl font-semibold transition duration-300 shadow-md shadow-blue-300/40"
-//                 >
-//                   Submit Application
-//                 </button>
-//               </div>
-//             </form>
-//           </div>
-//         </div>
-//       )}
-      
-//     </div>
-//   );
-// };
-
-// export default InternshipPage;
-import React, { useState } from "react";
-import { XCircle } from "lucide-react";
-import { Helmet } from 'react-helmet';
 const internships = [
-    {
-      id: 1,
-      title: "Frontend Developer Intern",
-      description: "Work on exciting front-end projects to sharpen your UI/UX skills.",
-      duration: "3 months",
-      image: "https://img.icons8.com/color/96/react-native.png",
-    },
-    {
-      id: 2,
-      title: "Backend Developer Intern",
-      description: "Assist in building robust backend systems and APIs.",
-      duration: "6 months",
-      image: "https://img.icons8.com/color/96/nodejs.png",
-    },
-    {
-      id: 3,
-      title: "Full Stack Developer Intern",
-      description: "Get experience with both front-end and back-end development.",
-      duration: "4 months",
-      image: "https://img.icons8.com/color/96/source-code.png",
-    },
-    {
-      id: 4,
-      title: "Mobile App Developer Intern",
-      description: "Develop cross-platform mobile applications and user engagement.",
-      duration: "5 months",
-      image: "https://img.icons8.com/color/96/flutter.png",
-    },
-    {
-      id: 5,
-      title: "Data Science Intern",
-      description: "Explore data analytics, machine learning, and AI techniques.",
-      duration: "6 months",
-      image: "https://img.icons8.com/color/96/artificial-intelligence.png",
-    },
-    {
-      id: 6,
-      title: "Python Django Intern",
-      description: "Learn about deployment, and cloud infrastructure management.",
-      duration: "4 months",
-      image: "https://img.icons8.com/color/96/django.png",
-    },
-    {
-      id: 7,
-      title: "MERN Stack Intern",
-      description: "Learn about continuous integration and cloud infrastructure.",
-      duration: "5 months",
-      image: "https://img.icons8.com/color/96/mongodb.png",
-    },
-  ];
-  
+  {
+    id: 1,
+    title: "Frontend Developer Intern",
+    description: "Work on exciting front-end projects to sharpen your UI/UX skills.",
+    duration: "3 months",
+    image: "https://img.icons8.com/color/96/react-native.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 2,
+    title: "Backend Developer Intern",
+    description: "Assist in building robust backend systems and APIs.",
+    duration: "6 months",
+    image: "https://img.icons8.com/color/96/nodejs.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 3,
+    title: "Full Stack Developer Intern",
+    description: "Get experience with both front-end and back-end development.",
+    duration: "4 months",
+    image: "https://img.icons8.com/color/96/source-code.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 4,
+    title: "Mobile App Developer Intern",
+    description: "Develop cross-platform mobile applications and user engagement.",
+    duration: "5 months",
+    image: "https://img.icons8.com/color/96/flutter.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 5,
+    title: "Data Science Intern",
+    description: "Explore data analytics, machine learning, and AI techniques.",
+    duration: "6 months",
+    image: "https://img.icons8.com/color/96/artificial-intelligence.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 6,
+    title: "Python Django Intern",
+    description: "Learn about deployment and cloud infrastructure management.",
+    duration: "4 months",
+    image: "https://img.icons8.com/color/96/django.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 7,
+    title: "MERN Stack Intern",
+    description: "Learn about continuous integration and cloud infrastructure.",
+    duration: "5 months",
+    image: "https://img.icons8.com/color/96/mongodb.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 8,
+    title: "Cyber Security Intern",
+    description: "Learn about penetration testing, ethical hacking, and securing networks.",
+    duration: "3 months",
+    image: "https://assets.bizclikmedia.net/900/8dc2872cdb3d622f052fee37f0a9b7de:15ca417f19db17b12c677342137eccca/gettyimages-1310426274-0-jpg.webp",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 9,
+    title: "AI & Machine Learning Intern",
+    description: "Build AI models, work on deep learning and automation projects.",
+    duration: "6 months",
+    image: "https://img.icons8.com/color/96/robot-2.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 10,
+    title: "Advanced Excel Intern",
+    description: "Master formulas, PivotTables, dashboards, and Excel automation.",
+    duration: "2 months",
+    image: "https://img.icons8.com/color/96/microsoft-excel-2019--v1.png",
+    mode: ["online", "offline"],
+  },
+  {
+    id: 11,
+    title: "AWS Cloud Intern",
+    description: "Learn cloud computing, EC2, S3, IAM, and scalable deployment.",
+    duration: "3 months",
+    image: "https://img.icons8.com/color/96/amazon-web-services.png",
+    mode: ["online", "offline"],
+  }
+];
+
 
 const InternshipPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -335,12 +103,25 @@ const InternshipPage = () => {
     name: "",
     email: "",
     phone: "",
-    resume: null, // Change to store the file
+    resume: null, // store file
   });
+
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => setSuccessMessage(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
 
   const handleApplyClick = (internship) => {
     setSelectedInternship(internship);
     setIsModalOpen(true);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      resume: null,
+    });
   };
 
   const handleCloseModal = () => {
@@ -349,135 +130,188 @@ const InternshipPage = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: files[0], // Store the selected file
-    }));
+    setFormData((prev) => ({ ...prev, [name]: files[0] }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // API call logic here
 
-  //   const data = new FormData();
-  //   data.append('internshipTitle', selectedInternship.title); // Dynamic
-  //   data.append('name', formData.name);
-  //   data.append('email', formData.email);
-  //   data.append('phone', formData.phone);
-  //   data.append('resume', formData.resume); // Selected file
-
-  //   // try {
-  //   //   const response = await fetch('http://localhost:5000/api/internship-apply', {
-  //   //     method: 'POST',
-  //   //     body: data,
-  //   //   });
-
-  //   //   const result = await response.json();
-  //   //   console.log('Success:', result);
-
-  //   //   // Show success message
-  //   //   setSuccessMessage("Application submitted successfully!");
-
-  //   //   // Hide the success message after 3 seconds
-  //   //   setTimeout(() => {
-  //   //     setSuccessMessage(""); // Clear the success message
-  //   //   }, 3000);
-
-  //   //   // Optionally, close the modal and clear form
-  //   //   setIsModalOpen(false);
-  //   //   setFormData({
-  //   //     name: "",
-  //   //     email: "",
-  //   //     phone: "",
-  //   //     resume: null,
-  //   //   });
-  //   // } catch (error) {
-  //   //   console.error('Error:', error);
-  //   // }
-  // };
+    setIsModalOpen(false);
+    setSuccessMessage(`Application for "${selectedInternship.title}" submitted successfully!`);
+  };
 
   return (
-    <div className="min-h-screen pt-12 px-4 pb-20 sm:px-6 lg:px-12 bg-white">
-      <div className="max-w-9xl pt-20 mx-auto">
-        {/* Title */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center animate__animated animate__fadeInDown text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] via-[#F472B6] via-[#EF4444] to-[#F97316]">
-          Internship Opportunities
+    <div className="min-h-screen pt-20 pb-32 px-4 sm:px-6 lg:px-16 bg-gradient-to-br from-[#f0f9ff] via-[#e0f2fe] to-[#fef9ff] relative overflow-hidden font-inter select-none">
+      {/* Animated Background Blobs */}
+      <div className="absolute top-[-150px] left-[-200px] w-[550px] h-[550px] bg-gradient-to-tr from-indigo-300 via-pink-200 to-orange-200 opacity-30 rounded-full blur-[160px] animate-pulse" />
+      <div className="absolute bottom-[-150px] right-[-200px] w-[500px] h-[500px] bg-gradient-to-bl from-orange-200 via-blue-100 to-pink-300 opacity-25 rounded-full blur-[140px] animate-pulse" />
+
+      {/* Floating Particles */}
+      <div className="absolute top-10 right-10 w-16 h-16 bg-pink-400 rounded-full opacity-30 blur-md animate-[float_6s_ease-in-out_infinite]" />
+      <div className="absolute bottom-24 left-16 w-12 h-12 bg-orange-400 rounded-full opacity-25 blur-md animate-[float_7s_ease-in-out_infinite]" />
+      <div className="absolute top-1/3 left-1/2 w-6 h-6 bg-blue-500 rounded-full opacity-20 blur-md animate-[float_10s_ease-in-out_infinite]" />
+
+      {/* Header */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-pink-600 to-orange-500 drop-shadow-xl tracking-tight animate__animated animate__fadeInDown">
+          🚀 Discover <span className="underline ">Internship Opportunities</span>
         </h1>
 
         {/* Success Message */}
         {successMessage && (
-          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-            <div className="bg-blue-900 text-white font-semibold p-4 rounded-lg">
+          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50">
+            <div className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white font-semibold px-10 py-5 rounded-3xl shadow-2xl animate-bounce text-lg select-text">
               {successMessage}
             </div>
           </div>
         )}
 
         {/* Internship Cards */}
-        <div className="flex flex-col gap-10">
-          {internships.map((internship) => (
-            <div key={internship.id} className="flex justify-center">
-              <div className="flex border border-blue-900 flex-col md:flex-row items-center md:items-start rounded-2xl shadow-md transform hover:scale-105 hover:shadow-[#127DC8] hover:shadow-lg duration-500 p-8 w-full max-w-4xl">
-                {/* Image */}
-                <div className="w-28 h-28 mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+        <div className="grid grid-cols-1 gap-14">
+          {internships.map((internship, index) => (
+            <motion.div
+              key={internship.id}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.15, duration: 0.8, ease: "easeOut" }}
+              className="flex justify-center"
+            >
+              <div
+                className="relative flex flex-col md:flex-row items-center md:items-start
+                  bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300
+                  border border-slate-200 rounded-3xl shadow-[0_15px_60px_rgba(59,130,246,0.3)]
+                  hover:shadow-indigo-400/50 hover:scale-[1.04] transition-all duration-500 w-full max-w-4xl p-8 overflow-hidden group cursor-pointer select-none"
+              >
+                {/* Glowing Gradient Border on Hover */}
+                <div className="absolute -inset-[2px] rounded-3xl bg-gradient-to-r from-indigo-400 via-pink-400 to-orange-300 opacity-0 group-hover:opacity-40 blur-3xl z-0 transition-opacity duration-700" />
+
+                {/* Internship Logo */}
+                <div className="relative w-28 h-28 mb-6 md:mb-0 md:mr-6 flex-shrink-0 z-10">
                   <img
                     src={internship.image}
                     alt={internship.title}
-                    className="w-full h-full object-contain rounded-xl"
+                    className="w-full h-full object-contain rounded-xl border border-blue-200 shadow-lg"
+                    draggable={false}
                   />
                 </div>
 
-                {/* Text Content */}
-                <div className="flex flex-col justify-between flex-grow text-center md:text-left">
-                  <h2 className="text-xl sm:text-xl font-bold text-blue-900 mb-2">
-                    {internship.title}
-                  </h2>
-                  <p className="text-blue-900 mb-3 text-base sm:text-lg">
+                {/* Details */}
+                <div className="relative z-10 flex flex-col text-center md:text-left flex-grow">
+                  <h2 className="text-2xl font-extrabold text-blue-900 mb-2">{internship.title}</h2>
+                  <p className="text-blue-800 text-base sm:text-lg mb-3 leading-relaxed">
                     {internship.description}
                   </p>
-                  <p className="text-blue-900 font-semibold text-base sm:text-lg mb-4 md:mb-0">
-                    Duration: {internship.duration}
-                  </p>
-                </div>
 
-                {/* Button */}
-                <div className="mt-4 md:mt-0 md:ml-6">
+                  <p className="text-blue-900 font-semibold text-base sm:text-lg mb-4 flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-blue-700" />
+                    <span className="text-blue-700">{internship.duration}</span>
+                  </p>
+
+                  {/* Badge */}
+                  <div className="flex items-center gap-4 text-blue-800 font-medium">
+                  {internship.mode?.includes("online") && (
+                    <div className="flex items-center gap-1">
+                      <Laptop2 className="w-4 h-4" />
+                      Online
+                    </div>
+                  )}
+                  {internship.mode?.includes("offline") && (
+                    <div className="flex items-center gap-1">
+                      <LocateFixed className="w-4 h-4" />
+                      Offline
+                    </div>
+                  )}
+                </div>
+                
+                  {/* Apply Button */}
                   <button
-                    className="mt-auto w-full bg-gradient-to-r from-[#127DC8] to-[#0E5A9E] hover:from-[#0E5A9E] hover:to-[#127DC8] text-white py-3 px-6 rounded-2xl font-semibold transition duration-300 shadow-md shadow-blue-400/50"
-                 
+                    onClick={() => handleApplyClick(internship)}
+                    className="mt-6 rounded-lg bg-blue-700 px-6 py-3 text-white font-semibold hover:bg-blue-800 transition-colors shadow-lg active:scale-[0.98]"
+                    aria-label={`Apply for ${internship.title} internship`}
                   >
                     Apply Now
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      <Helmet>
-      <script type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "EducationalOccupationalProgram",
-          "name": "Internship Program",
-          "provider": {
-            "@type": "Organization",
-            "name": "Code Vibe Innovation",
-            "url": "https://codevibeinnovation.com/"
-          },
-          "educationalProgramMode": "online",
-          "url": "https://yourdomain.com/internshiphttps://codevibeinnovation.com/internship
-      `}</script>
-    </Helmet>
-    
+      {/* Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <div className="bg-white rounded-xl shadow-xl p-8 max-w-md w-full relative">
+            <h3 id="modal-title" className="text-2xl font-bold mb-6 text-center text-blue-900">
+              Apply for {selectedInternship?.title}
+            </h3>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Your Phone Number"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="file"
+                name="resume"
+                accept=".pdf,.doc,.docx"
+                onChange={handleFileChange}
+                required
+                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div className="flex justify-end gap-4 mt-4">
+                <button
+                  type="button"
+                  onClick={handleCloseModal}
+                  className="px-4 py-2 rounded-md border border-blue-700 text-blue-700 hover:bg-blue-100 transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-2 rounded-md bg-blue-700 text-white font-semibold hover:bg-blue-800 transition"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
