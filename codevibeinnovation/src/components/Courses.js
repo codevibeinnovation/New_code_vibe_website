@@ -2118,7 +2118,432 @@ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo
     "https://cdn-icons-png.flaticon.com/512/595/595067.png",
     "https://cdn-icons-png.flaticon.com/512/2721/2721290.png"
   ]
+},
+{
+  id: 18,
+  image:  "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+  title: "Java",
+  path: "Java",
+  badge: "Beginner to Advanced",
+  description:
+    "This course covers Java programming from basics to advanced concepts along with Spring Boot for building scalable backend applications. You will learn REST API development, database integration, security, and work on a real-world industry-level project.",
+  category: "Programming Languages & Backend Development",
+  content: {
+    courseOverview: [
+      "Introduction to Java",
+      "Java Syntax, Variables & Data Types",
+      "Control Statements & Loops",
+      "Object-Oriented Programming (OOP) in Java",
+      "Exception Handling",
+      "Collections Framework",
+      "File Handling in Java",
+      "JDBC & Database Connectivity",
+     
+    ],
+
+    moduleContent: {
+      "Module 1: Core Java Fundamentals": [
+        "Introduction to Java",
+"Eclipse IDE Setup",
+"JVM, JDK, JRE – Differences and Roles",
+"Class, Object, Method",
+"Conditional Statements",
+"If,If-Else,Nested If-Else,Else-If Ladder,Switch Case",
+"Loops,While,Do While, For",
+"Break & Continue",
+"Constructor",
+"Garbage Collection",
+"Finalize Method",
+"Source File Layout",
+"Package Management",
+"Import Statement",
+"Data Types,Primitive Types,Reference Types"
+      ],
+
+      "Module 2:  Core Java Fundamentals 2": [
+        "Modifiers Public,Private,Protected,Default Arrays",
+"Encapsulation",
+"Inheritance",
+"Types Of Inheritance Inheritance With Constructor Polymorphism",
+"Types of Polymorphism",
+"Method Overloading",
+"Method Overriding",
+"Abstract Class & Interface Introduction",
+"Differences Keywords,this,static,f inal,super"
+      ],
+
+      "Module 3: Strings, Exception Handling": [
+        "String Handling",
+"String Class",
+"StringBuffer & StringBuilder Wrapper Classes",
+"Exception Handling",
+"Types Of Exceptions",
+"try-catch-finally",
+"Multi-Catch",
+"throw & throws",
+"File I/O",
+"Streams – What and Why",
+"Types of Streams",
+"FileInputStream & FileOutputStream File Class and File Handling Methods Command Line Arguments",
+ "Multithreading",
+"Thread Lifecycle",
+"Creating Threads",
+"Collection Hierarchy",
+"List, Set & Map Interfaces",
+"ArrayList, Vector, LinkedList HashSet, TreeSet, HashMap, TreeMap Generics",
+"Comparator & Comparable",
+"Event Handling"
+      ],
+
+      
+
+      
+
+      
+
+     
+
+     
+
+   
+      
+
+      
+
+      
+     
+    }
+  },
+
+  overview: {
+    whatYouCanDo: [
+      "Build backend applications using Java & Spring Boot",
+      "Create RESTful APIs",
+      "Work with databases using JPA & Hibernate",
+      "Develop secure and scalable backend systems"
+    ],
+    prerequisites: ["Basic programming knowledge"],
+    weOffer: [
+      "Classroom Training",
+      "Online Training",
+      "Corporate Training",
+      "Weekend Training",
+      "One to One Training",
+      "Project-Based Learning"
+    ],
+    trainingIncludes: [
+      "Theory & Practical Sessions",
+      "Real-time Project Work",
+      "Exclusive Study Materials",
+      "Course Completion Certificate",
+      "Support",
+      "Job Assistance"
+    ]
+  },
+
+  logos: [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+  ]
+},
+{
+  id: 19,
+  image: "https://www.nibib.nih.gov/sites/default/files/inline-images/AI%20600%20x%20400.jpg",
+  title: "Artificial Intelligence",
+  path: "AI",
+  badge: "Beginner to Advanced",
+  description:
+    "This course covers Artificial Intelligence from Python fundamentals to advanced Machine Learning, Deep Learning, and NLP concepts. Learners will work on real-world AI projects, model deployment, and gain industry-ready skills through hands-on training.",
+  category: "Artificial Intelligence & Machine Learning",
+  content: {
+    courseOverview: [
+      "Introduction to Artificial Intelligence",
+      "Python Programming for AI",
+      "Data Preprocessing & Analysis",
+      "Machine Learning Algorithms",
+      "Deep Learning & Neural Networks",
+      "Natural Language Processing (NLP)",
+      "Computer Vision Basics",
+      "AI Model Deployment",
+      "Real-World AI Projects"
+    ],
+
+    moduleContent: {
+      "Module 1: Python & AI Foundations": [
+        "What is Artificial Intelligence?",
+        "Real-world Applications of AI",
+        "Python Installation & IDE Setup (Anaconda / VS Code)",
+        "Variables, Data Types & Operators",
+        "Input and Output Operations",
+        "Conditional Statements",
+        "Loops (for, while)",
+        "Functions & Arguments",
+        "Lambda Functions",
+        "Basic Problem Solving",
+        "Practice Assignments"
+      ],
+
+      "Module 2: Python Data Handling & Libraries": [
+        "Lists, Tuples, Sets & Dictionaries",
+        "String Handling",
+        "File Handling",
+        "Exception Handling",
+        "Object-Oriented Programming (Class, Object, Inheritance)",
+        "NumPy Basics",
+        "Pandas Basics",
+        "Mini Python Project"
+      ],
+
+      "Module 3: Machine Learning Fundamentals": [
+        "What is Machine Learning?",
+        "Types of Machine Learning (Supervised, Unsupervised, Reinforcement)",
+        "Machine Learning Workflow",
+        "Data Cleaning & Preprocessing",
+        "Train-Test Split",
+        "Linear Regression",
+        "Logistic Regression",
+        "K-Nearest Neighbors (KNN)",
+        "Decision Trees",
+        "K-Means Clustering",
+        "Hierarchical Clustering",
+        "Dimensionality Reduction (PCA)",
+        "Model Evaluation Metrics",
+        "Accuracy, Precision, Recall, F1-Score",
+        "Cross Validation",
+        "Mini Machine Learning Project"
+      ],
+
+      "Module 4: Deep Learning & NLP": [
+        "Introduction to Deep Learning",
+        "Artificial Neural Networks (ANN)",
+        "Activation Functions",
+        "TensorFlow & Keras Basics",
+        "Convolutional Neural Networks (CNN)",
+        "Image Classification",
+        "Transfer Learning",
+        "Natural Language Processing Overview",
+        "Text Preprocessing",
+        "Tokenization, Stemming, Lemmatization",
+        "Bag of Words & TF-IDF",
+        "Sentiment Analysis",
+        "OpenCV Basics",
+        "Chatbot Basics",
+        "Using AI APIs",
+        "Mini Deep Learning / NLP Project"
+      ],
+
+      "Module 5: Projects, Deployment & Career Preparation": [
+        "Recommendation System",
+        "Face Recognition System",
+        "Spam Detection System",
+        "Stock Price Prediction",
+        "Flask Basics",
+        "Deploying ML Models as APIs",
+        "Streamlit Dashboards",
+        "Git & GitHub Basics",
+        "Final Project Planning",
+        "Dataset Selection",
+        "Model Building & Optimization",
+        "Project Testing & Presentation"
+      ]
+    }
+  },
+
+  overview: {
+    whatYouCanDo: [
+      "Build AI & ML models using Python",
+      "Develop Machine Learning & Deep Learning applications",
+      "Work on NLP and Computer Vision projects",
+      "Deploy AI models as web applications",
+      "Create an AI project portfolio"
+    ],
+    prerequisites: ["Basic programming knowledge"],
+    weOffer: [
+      "Classroom Training",
+      "Online Training",
+      "Corporate Training",
+      "Weekend Training",
+      "One to One Training",
+      "Project-Based Learning"
+    ],
+    trainingIncludes: [
+      "Theory & Practical Sessions",
+      "Hands-on Real-world AI Projects",
+      "Internship Certification",
+      "Exclusive Study Materials",
+      "GitHub Portfolio Support",
+      "Career Guidance & Job Assistance"
+    ]
+  },
+
+  logos: [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+  ]
+},
+{
+  id: 21,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNXZ4U8tTgSNn2ETcnTfOSfkpVg-maZr-waw&s",
+  title: "Git & GitHub Mastery",
+  path: "Git-GitHub",
+  badge: "Beginner to Advanced",
+  description:
+    "This course covers Git and GitHub from basic version control concepts to advanced collaboration workflows. Learners will master branching strategies, pull requests, conflict resolution, GitHub projects, and real-world team collaboration practices to become industry-ready developers.",
+
+  category: "Version Control & Collaboration",
+
+  content: {
+    courseOverview: [
+      "Introduction to Version Control",
+      "Git Installation & Configuration",
+      "Git Basic Commands",
+      "Branching & Merging",
+      "Working with Remote Repositories",
+      "GitHub Collaboration Workflow",
+      "Conflict Resolution",
+      "GitHub Projects & Issues",
+      "Real-World Team Workflow"
+    ],
+
+    moduleContent: {
+
+      "Module 1: Git Fundamentals": [
+        "What is Version Control?",
+        "Centralized vs Distributed Version Control",
+        "What is Git?",
+        "Installing Git",
+        "Git Configuration (username & email)",
+        "Initializing Repository (git init)",
+        "Cloning Repository (git clone)",
+        "Understanding Git File Lifecycle",
+        "Working Directory, Staging Area, Repository",
+        "git status",
+        "git add",
+        "git commit",
+        "git log",
+        "Understanding HEAD"
+      ],
+
+      "Module 2: Branching & Merging": [
+        "What is a Branch?",
+        "Creating Branch (git branch)",
+        "Switching Branch (git checkout)",
+        "Create & Switch (git checkout -b)",
+        "Merging Branches (git merge)",
+        "Fast-forward Merge",
+        "Merge Conflicts",
+        "Resolving Merge Conflicts",
+        "Deleting Branch",
+        "Best Branching Practices",
+        "Introduction to Git Rebase",
+        "Merge vs Rebase"
+      ],
+
+      "Module 3: Working with Remote Repositories": [
+        "What is GitHub?",
+        "Creating GitHub Account",
+        "Creating Repository on GitHub",
+        "Connecting Local Repo to GitHub",
+        "git remote add origin",
+        "git push",
+        "git pull",
+        "git fetch",
+        "Upstream & Tracking Branches",
+        "Forking Repository",
+        "Cloning Forked Repository",
+        "Keeping Fork Updated"
+      ],
+
+      "Module 4: GitHub Collaboration & Workflow": [
+        "Pull Requests (PR)",
+        "Code Review Process",
+        "Approving & Merging PR",
+        "GitHub Issues",
+        "Assigning Tasks",
+        "GitHub Projects Board",
+        "Managing Milestones",
+        "Team Collaboration Workflow",
+        "Open Source Contribution Process",
+        "Professional Commit Messages",
+        "Creating README.md",
+        "Markdown Basics"
+      ],
+
+      "Module 5: Advanced Git & Professional Practices": [
+        "Git Stash",
+        "Git Reset (Soft, Mixed, Hard)",
+        "Git Restore",
+        "Undoing Commits",
+        "Rewriting Commit History",
+        "Interactive Rebase",
+        "Cherry Pick",
+        "Tagging Releases",
+        "Git Hooks Overview",
+        ".gitignore Best Practices",
+        "Managing Large Files",
+        "Git LFS Introduction",
+        "Versioning Strategy (Semantic Versioning)"
+      ],
+
+      "Module 6: Real-World Projects & Deployment": [
+        "Managing a Complete Project Using Git",
+        "Branching Strategy in Real Projects",
+        "Collaborative Mini Project",
+        "Uploading Existing Project to GitHub",
+        "Deploying Static Website from GitHub",
+        "GitHub Pages Deployment",
+        "Portfolio Optimization on GitHub",
+        "Creating Professional GitHub Profile",
+        "Interview Preparation for Git",
+        "Final Capstone Project"
+      ]
+    }
+  },
+
+  overview: {
+    whatYouCanDo: [
+      "Track and manage code changes efficiently",
+      "Work in team-based development environments",
+      "Resolve merge conflicts confidently",
+      "Use GitHub for collaboration and project management",
+      "Contribute to open-source projects",
+      "Maintain professional GitHub portfolio"
+    ],
+
+    prerequisites: ["Basic computer knowledge"],
+
+    weOffer: [
+      "Classroom Training",
+      "Online Training",
+      "Corporate Training",
+      "Weekend Training",
+      "One to One Training",
+      "Project-Based Learning"
+    ],
+
+    trainingIncludes: [
+      "Theory & Practical Sessions",
+      "Hands-on Git Practice",
+      "Real-World Collaboration Projects",
+      "Internship Certification",
+      "GitHub Profile Optimization Support",
+      "Career Guidance & Interview Preparation"
+    ]
+  },
+
+  logos: [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
+  ]
 }
+
+
+
 
 
 

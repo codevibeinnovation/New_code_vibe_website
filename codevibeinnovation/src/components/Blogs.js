@@ -158,8 +158,158 @@ Final Thoughts:
 Interview preparation is a marathon, not a sprint. The key is consistency, clarity, and confidence. The goal isn’t just to get a job, but to become a better problem solver and communicator.
 
 Whether you're aiming for Big Tech, startups, or remote roles, structured coding prep will open the door. Stay curious, keep solving, and don’t fear failure—every problem solved is a step closer to your dream job.`
+},
+
+{
+  id: 5,
+  title: "How Artificial Intelligence Will Transform Jobs by 2030",
+  image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+  summary:
+    "AI is reshaping industries. Learn how automation, AI tools, and smart systems will change the future of work and what skills students must learn now.",
+  content: `Artificial Intelligence (AI) is rapidly transforming industries from healthcare to finance, manufacturing to education. By 2030, AI is expected to automate repetitive tasks, enhance decision-making, and even create entirely new job categories.
+
+Students and young professionals must focus on understanding AI concepts such as machine learning, natural language processing, and computer vision. Knowledge of Python, TensorFlow, PyTorch, and cloud-based AI platforms will be crucial.
+
+Key areas where AI is impacting jobs include:
+1. Automation of repetitive tasks in IT, finance, HR, and customer support.
+2. AI-assisted decision-making in business analytics and operations.
+3. Creation of AI tools and platforms requiring developers and engineers.
+4. Demand for data-literate professionals who can interpret AI outputs.
+
+Preparing for an AI-driven future involves continuous learning, hands-on projects, internships, and building a strong portfolio showcasing AI and ML skills.`
+},
+{
+  id: 6,
+  title: "Machine Learning Roadmap for Beginners",
+  image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+  summary:
+    "A complete roadmap covering Python, algorithms, and projects to kickstart your journey in Machine Learning.",
+  content: `Machine Learning (ML) is a cornerstone of modern AI applications. For beginners, the learning path starts with mastering Python and libraries like NumPy, Pandas, and Matplotlib. Next comes understanding core ML algorithms: linear regression, decision trees, random forests, and clustering methods.
+
+Practical experience is key. Build projects like:
+- Predicting house prices
+- Image recognition
+- Sentiment analysis on social media data
+
+Internships and GitHub contributions enhance your profile. Once comfortable, explore deep learning, NLP, and deployment of ML models using cloud platforms such as AWS, Azure, or GCP.`
+},
+{
+  id: 7,
+  title: "Why Data Science Is the Hottest Career of 2025",
+  image: "https://static.vecteezy.com/system/resources/thumbnails/005/442/693/small_2x/data-science-analytics-internet-and-technology-concept-concept-photo.jpg",
+  summary:
+    "Data Science offers high salaries, job security, and global opportunities. Learn why it’s the No. 1 career choice for tech learners.",
+  content: `Data Science combines statistics, programming, and domain expertise to extract insights from data. Companies rely heavily on data scientists to make informed decisions, optimize operations, and predict trends.
+
+Core skills include Python, R, SQL, and tools like Tableau and Power BI. Data cleaning, visualization, and feature engineering are essential. Hands-on projects like analyzing sales data, building recommendation systems, or forecasting demand demonstrate capability.
+
+Internships and Kaggle competitions are excellent ways to build practical experience. As the world generates more data, data scientists will continue to be in high demand across industries.`
+},
+{
+  id: 8,
+  title: "Top 10 Python Projects Every Student Must Build",
+  image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159",
+  summary:
+    "Boost your GitHub portfolio with beginner-to-advanced Python projects, including AI, automation, web apps, and data dashboards.",
+  content: `Python is versatile, making it perfect for students to build a portfolio. Here are 10 project ideas:
+1. Web scraper to extract data from websites.
+2. Chatbot using NLP libraries like NLTK or spaCy.
+3. Personal finance manager.
+4. Weather app using API integration.
+5. Data visualization dashboard using Matplotlib or Seaborn.
+6. Simple e-commerce website using Django or Flask.
+7. Machine learning model for prediction tasks.
+8. Automation scripts for repetitive tasks.
+9. Portfolio website showcasing projects.
+10. AI-powered recommendation system.
+
+Document all projects on GitHub with clear README files. Deploy some projects online to demonstrate your skills to recruiters.`
+},
+{
+  id: 9,
+  title: "DevOps for Beginners: Why Every Developer Needs It",
+  image: "https://t4.ftcdn.net/jpg/03/96/98/33/360_F_396983381_AcuGFHQbNn7D9eercXFpOecN7d7B5F66.jpg",
+  summary:
+    "Learn why Git, Docker, Kubernetes, and CI/CD pipelines make you a complete software engineer in today’s DevOps-driven world.",
+  content: `DevOps is the intersection of development and operations, emphasizing collaboration, automation, and continuous delivery. Key skills include:
+- Version control with Git
+- Containerization using Docker
+- Orchestration using Kubernetes
+- CI/CD pipelines with Jenkins or GitHub Actions
+- Cloud platforms like AWS, Azure, GCP
+
+Developers with DevOps knowledge can deploy, monitor, and maintain applications efficiently. Internships and hands-on projects are the fastest way to gain expertise and boost your career.`
+},
+{
+  id: 10,
+  title: "Cloud Computing Explained: AWS, Azure, GCP Compared",
+  image: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Cloud_computing.jpg",
+  summary:
+    "A simple breakdown of the top cloud platforms, their certifications, job roles, and how students can enter the cloud industry.",
+  content: `Cloud computing allows businesses to access computing resources without maintaining physical infrastructure. Key platforms include:
+- AWS: Leading cloud provider with services like EC2, S3, Lambda.
+- Azure: Microsoft’s cloud platform, great for .NET developers.
+- GCP: Google Cloud Platform, strong in AI and Big Data services.
+
+Students should learn fundamentals of cloud services, deployment, and monitoring. Building projects and earning certifications can accelerate career opportunities. Cloud knowledge is increasingly expected in software, data, and AI roles.`
+},
+{
+  id: 11,
+  title: "How to Build Your First AI Model Using Python",
+  image:
+    "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1080&q=80",
+  summary:
+    "Beginner-friendly guide to creating your first AI model using Python, Pandas, Scikit-learn, and Jupyter Notebook.",
+  content: `
+Building your first AI model requires understanding the problem, preparing data, training a model, and evaluating its performance. Here's a step-by-step approach for beginners:
+
+1. **Choose a Dataset**  
+Select a dataset relevant to your problem. Popular sources include Kaggle, UCI Machine Learning Repository, and public APIs. Make sure the dataset is clean or can be preprocessed easily.
+
+2. **Explore and Preprocess Data**  
+Analyze the dataset to understand features, missing values, and outliers. Use Python libraries like Pandas for data manipulation and NumPy for numerical operations.
+
+Preprocessing may involve:
+- Handling missing values  
+- Encoding categorical variables  
+- Scaling or normalizing features  
+
+3. **Split Data into Training and Testing Sets**  
+Divide your data into training and testing sets (commonly 70/30 or 80/20). This ensures the model is evaluated on unseen data.
+
+4. **Select and Train a Model**  
+Start with simple models like Logistic Regression, Decision Tree, or K-Nearest Neighbors. Use Scikit-learn for implementation.
+
+Example:
+\`\`\`python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X_train, y_train)
+\`\`\`
+`,
+},
+{
+  id: 12,
+  title: "Top 7 Tech Skills Recruiters Want in 2025",
+  image: "https://images.unsplash.com/photo-1581092580494-46b1f08440cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8dGVjaHNraWxsfHx8fHwxNjk5OTMxNzMw&ixlib=rb-4.0.3&q=80&w=1080",
+  summary:
+    "AI, Data, Cloud, DevOps, and Full-Stack development are in high demand. Here’s what companies are truly searching for in freshers.",
+  content: `Technology evolves quickly, and recruiters look for candidates with practical knowledge and modern skills. Top skills include:
+- Artificial Intelligence & Machine Learning
+- Data Science & Analytics
+- Full-stack Web Development
+- Cloud Computing (AWS, Azure, GCP)
+- DevOps & CI/CD
+- Cybersecurity basics
+- Version control (Git) and collaboration tools
+
+Students should focus on building projects, internships, and portfolios showcasing these skills. Hands-on experience is more valuable than certificates alone.`
 }
+
 
    
   ];
+
   

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Clock, Laptop2,LocateFixed } from "lucide-react";
+
+import React, { useState, useEffect, useRef } from "react";
+import { Clock } from "lucide-react";
+import NET from "vanta/dist/vanta.net.min";
+import * as THREE from "three";
 
 const internships = [
   {
@@ -10,6 +12,10 @@ const internships = [
     duration: "3 months",
     image: "https://img.icons8.com/color/96/react-native.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+    perks: ["Certificate", "Placement Assistance", "Flexible Timing"],
   },
   {
     id: 2,
@@ -18,6 +24,10 @@ const internships = [
     duration: "6 months",
     image: "https://img.icons8.com/color/96/nodejs.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["Node.js", "Express.js", "MongoDB", "REST API", "Authentication"],
+    perks: ["Certificate", "Placement Assistance", "Live Projects"],
   },
   {
     id: 3,
@@ -26,6 +36,10 @@ const internships = [
     duration: "4 months",
     image: "https://img.icons8.com/color/96/source-code.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+    perks: ["Certificate", "Placement Support", "Career Mentorship"],
   },
   {
     id: 4,
@@ -34,6 +48,10 @@ const internships = [
     duration: "5 months",
     image: "https://img.icons8.com/color/96/flutter.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["Flutter", "Dart", "Firebase", "UI Design"],
+    perks: ["Certificate", "Flexible Timing", "Live App Deployment"],
   },
   {
     id: 5,
@@ -42,6 +60,10 @@ const internships = [
     duration: "6 months",
     image: "https://img.icons8.com/color/96/artificial-intelligence.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["Python", "Pandas", "NumPy", "Scikit-learn", "ML Models"],
+    perks: ["Certificate", "Placement Guidance", "Capstone Project"],
   },
   {
     id: 6,
@@ -50,6 +72,10 @@ const internships = [
     duration: "4 months",
     image: "https://img.icons8.com/color/96/django.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["Python", "Django", "PostgreSQL", "REST API", "Heroku"],
+    perks: ["Certificate", "Job Assistance", "Resume Building"],
   },
   {
     id: 7,
@@ -58,6 +84,10 @@ const internships = [
     duration: "5 months",
     image: "https://img.icons8.com/color/96/mongodb.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["MongoDB", "Express.js", "React.js", "Node.js", "GitHub"],
+    perks: ["Certificate", "Career Support", "Team Collaboration"],
   },
   {
     id: 8,
@@ -66,6 +96,10 @@ const internships = [
     duration: "3 months",
     image: "https://assets.bizclikmedia.net/900/8dc2872cdb3d622f052fee37f0a9b7de:15ca417f19db17b12c677342137eccca/gettyimages-1310426274-0-jpg.webp",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["Ethical Hacking", "Linux", "Kali Tools", "Network Security"],
+    perks: ["Certificate", "Placement Aid", "CTF Challenges"],
   },
   {
     id: 9,
@@ -74,6 +108,10 @@ const internships = [
     duration: "6 months",
     image: "https://img.icons8.com/color/96/robot-2.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["Python", "TensorFlow", "Deep Learning", "NLP", "ML Ops"],
+    perks: ["Certificate", "Placement Preparation", "AI Projects"],
   },
   {
     id: 10,
@@ -82,6 +120,10 @@ const internships = [
     duration: "2 months",
     image: "https://img.icons8.com/color/96/microsoft-excel-2019--v1.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["Excel", "VLOOKUP", "PivotTables", "Macros", "Dashboards"],
+    perks: ["Certificate", "Interview Prep", "Excel Templates"],
   },
   {
     id: 11,
@@ -90,21 +132,49 @@ const internships = [
     duration: "3 months",
     image: "https://img.icons8.com/color/96/amazon-web-services.png",
     mode: ["online", "offline"],
+    certification: true,
+    placement: true,
+    skills: ["AWS", "EC2", "S3", "IAM", "Deployment"],
+    perks: ["Certificate", "Cloud Lab Access", "Placement Aid"],
   }
 ];
-
 
 const InternshipPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedInternship, setSelectedInternship] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    resume: null, // store file
+    resume: null,
   });
+
+  const vantaRef = useRef(null);
+  const vantaEffect = useRef(null);
+
+  useEffect(() => {
+    if (!vantaEffect.current) {
+      vantaEffect.current = NET({
+        el: vantaRef.current,
+        THREE,
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 500,
+        minWidth: 500,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x8b5cf6,
+        backgroundColor: 0xfdfbfb,
+        points: 12.0,
+        maxDistance: 20.0,
+        spacing: 18.0,
+      });
+    }
+    return () => {
+      if (vantaEffect.current) vantaEffect.current.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     if (successMessage) {
@@ -116,17 +186,10 @@ const InternshipPage = () => {
   const handleApplyClick = (internship) => {
     setSelectedInternship(internship);
     setIsModalOpen(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      resume: null,
-    });
+    setFormData({ name: "", email: "", phone: "", resume: null });
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleCloseModal = () => setIsModalOpen(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -134,181 +197,100 @@ const InternshipPage = () => {
   };
 
   const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: files[0] }));
+    const file = e.target.files[0];
+    setFormData((prev) => ({ ...prev, resume: file }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // API call logic here
-
     setIsModalOpen(false);
     setSuccessMessage(`Application for "${selectedInternship.title}" submitted successfully!`);
   };
+  const commonFormLink ="https://docs.google.com/forms/d/e/1FAIpQLSctjw-7kOrGFW1RuasWoTR1mXo7WuIc2sRK9NpusOauIiho_g/viewform?usp=header"
 
   return (
-    <div className="min-h-screen pt-24 pb-32 px-4 sm:px-6 lg:px-16 bg-gradient-to-br from-[#f0f9ff] via-[#e0f2fe] to-[#fef9ff] relative overflow-hidden font-inter select-none">
-      {/* Animated Background Blobs */}
-      <div className="absolute top-[-150px] left-[-200px] w-[550px] h-[550px] bg-gradient-to-tr from-indigo-300 via-pink-200 to-orange-200 opacity-30 rounded-full blur-[160px] animate-pulse" />
-      <div className="absolute bottom-[-150px] right-[-200px] w-[500px] h-[500px] bg-gradient-to-bl from-orange-200 via-blue-100 to-pink-300 opacity-25 rounded-full blur-[140px] animate-pulse" />
+    <div
+    ref={vantaRef}
+    className="min-h-screen pt-32 pb-32 px-4 sm:px-6 lg:px-16 font-inter relative overflow-hidden"
+  >
+    {/* Background animation */}
+    <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-purple-300 opacity-10 blur-[120px] animate-spin-slow z-0"></div>
+    <div className="pointer-events-none absolute top-1/2 -right-40 w-[400px] h-[400px] rounded-full bg-pink-200 opacity-20 blur-[100px] animate-bounce-slow z-0"></div>
+    <div className="pointer-events-none absolute bottom-[-80px] left-[40%] w-[600px] h-[600px] bg-indigo-200 opacity-10 rounded-full blur-[150px] animate-pulse z-0"></div>
 
-      {/* Floating Particles */}
-      <div className="absolute top-10 right-10 w-16 h-16 bg-pink-400 rounded-full opacity-30 blur-md animate-[float_6s_ease-in-out_infinite]" />
-      <div className="absolute bottom-24 left-16 w-12 h-12 bg-orange-400 rounded-full opacity-25 blur-md animate-[float_7s_ease-in-out_infinite]" />
-      <div className="absolute top-1/3 left-1/2 w-6 h-6 bg-blue-500 rounded-full opacity-20 blur-md animate-[float_10s_ease-in-out_infinite]" />
+    <div className="relative z-10 flex flex-col gap-12 max-w-4xl mx-auto">
+      {internships.map((internship, index) => {
+        const gradients = [
+          "from-pink-200 via-red-100 to-orange-50",
+          "from-yellow-200 via-orange-100 to-pink-50",
+          "from-purple-200 via-indigo-100 to-blue-50",
+        ];
+        const badgeColors = [
+          "bg-pink-100 text-pink-800 border-pink-200",
+          "bg-yellow-100 text-yellow-800 border-yellow-200",
+          "bg-purple-100 text-purple-800 border-purple-200",
+        ];
+        const cardGradient = gradients[index % gradients.length];
 
-      {/* Header */}
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-pink-600 to-orange-500 drop-shadow-xl tracking-tight animate__animated animate__fadeInDown">
-           Discover <span className="underline ">Internship Opportunities</span>
-        </h1>
-
-        {/* Success Message */}
-        {successMessage && (
-          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50">
-            <div className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white font-semibold px-10 py-5 rounded-3xl shadow-2xl animate-bounce text-lg select-text">
-              {successMessage}
+        return (
+          <div
+            key={internship.id}
+            className={`relative bg-gradient-to-br ${cardGradient} border border-purple-100 backdrop-blur-md shadow-xl rounded-3xl p-6 flex flex-col md:flex-row items-center gap-6 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:brightness-105 group`}
+          >
+            <div className="absolute top-4 right-4 flex items-center gap-2 text-xs font-medium bg-purple-100 text-purple-800 px-3 py-1 rounded-full shadow">
+              <Clock className="w-4 h-4" />
+              {internship.duration}
             </div>
-          </div>
-        )}
 
-        {/* Internship Cards */}
-        <div className="grid grid-cols-1 gap-14">
-        {internships.map((internship, index) => (
-          <div key={internship.id} className="flex justify-center">
-            <div
-              className="relative flex flex-col md:flex-row items-center md:items-start
-                bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300
-                border border-slate-200 rounded-3xl shadow-[0_15px_60px_rgba(59,130,246,0.3)]
-                hover:shadow-indigo-400/50 hover:scale-[1.04] transition-all duration-500 w-full max-w-4xl p-8 overflow-hidden group cursor-pointer select-none"
-            >
-              {/* Glowing Gradient Border on Hover */}
-              <div className="absolute -inset-[2px] rounded-3xl bg-gradient-to-r from-indigo-400 via-pink-400 to-orange-300 opacity-0 group-hover:opacity-40 blur-3xl z-0 transition-opacity duration-700" />
-        
-              {/* Internship Logo */}
-              <div className="relative w-28 h-28 mb-6 md:mb-0 md:mr-6 flex-shrink-0 z-10">
-                <img
-                  src={internship.image}
-                  alt={internship.title}
-                  className="w-full h-full object-contain rounded-xl border border-blue-200 shadow-lg"
-                  draggable={false}
-                />
+            <div className="flex-shrink-0 bg-white p-2 rounded-2xl shadow-md">
+              <img
+                src={internship.image}
+                alt={internship.title}
+                className="h-24 w-24 object-contain"
+              />
+            </div>
+
+            <div className="flex-1">
+              <h3 className="text-2xl font-extrabold text-purple-900 mb-1">{internship.title}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed mb-3">{internship.description}</p>
+
+              <div className="flex gap-2 flex-wrap mb-3">
+                {internship.mode.includes("online") && (
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs shadow-sm">
+                    💻 Online
+                  </span>
+                )}
+                {internship.mode.includes("offline") && (
+                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs shadow-sm">
+                    📍 Offline
+                  </span>
+                )}
               </div>
-        
-              {/* Details */}
-              <div className="relative z-10 flex flex-col text-center md:text-left flex-grow">
-                <h2 className="text-2xl font-extrabold text-blue-900 mb-2">{internship.title}</h2>
-                <p className="text-blue-800 text-base sm:text-lg mb-3 leading-relaxed">
-                  {internship.description}
-                </p>
-        
-                <p className="text-blue-900 font-semibold text-base sm:text-lg mb-4 flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-blue-700" />
-                  <span className="text-blue-700">{internship.duration}</span>
-                </p>
-        
-                {/* Badge */}
-                <div className="flex items-center gap-4 text-blue-800 font-medium">
-                  {internship.mode?.includes("online") && (
-                    <div className="flex items-center gap-1">
-                      <Laptop2 className="w-4 h-4" />
-                      Online
-                    </div>
-                  )}
-                  {internship.mode?.includes("offline") && (
-                    <div className="flex items-center gap-1">
-                      <LocateFixed className="w-4 h-4" />
-                      Offline
-                    </div>
-                  )}
-                </div>
-        
-               
-                <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdki5FYIneXdb38Cmud39bWIIzMb7MT-NOtD-O0G_fgdWPIYw/viewform?usp=header"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 rounded-lg bg-blue-700 px-6 py-3 text-white font-semibold hover:bg-blue-800 transition-colors shadow-lg"
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {internship.skills.map((skill, idx) => (
+                  <span
+                    key={idx}
+                    className={`px-3 py-1 text-xs border rounded-full shadow-sm transition hover:scale-105 ${badgeColors[idx % badgeColors.length]}`}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => window.open(commonFormLink, "_blank")}
+                className="mt-2 w-full bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 text-white font-semibold py-2.5 rounded-xl shadow-lg hover:scale-105 transition"
               >
                 Apply Now
-              </a>
-              
-              </div>
+              </button>
             </div>
           </div>
-        ))}
-        
-        </div>
-      </div>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-        >
-          <div className="bg-white rounded-xl shadow-xl p-8 max-w-md w-full relative">
-            <h3 id="modal-title" className="text-2xl font-bold mb-6 text-center text-blue-900">
-              Apply for {selectedInternship?.title}
-            </h3>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Your Phone Number"
-                value={formData.phone}
-                onChange={handleInputChange}
-                required
-                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="file"
-                name="resume"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-                required
-                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <div className="flex justify-end gap-4 mt-4">
-                <button
-                  type="button"
-                  onClick={handleCloseModal}
-                  className="px-4 py-2 rounded-md border border-blue-700 text-blue-700 hover:bg-blue-100 transition"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-6 py-2 rounded-md bg-blue-700 text-white font-semibold hover:bg-blue-800 transition"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+        );
+      })}
     </div>
+  </div>
   );
 };
 

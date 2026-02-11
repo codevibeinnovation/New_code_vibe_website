@@ -102,14 +102,14 @@ const About = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="relative pt-24 bg-gradient-to-b from-blue-50 via-white to-blue-100 text-black py-20 px-4 overflow-x-hidden">
+    <section id="why-choose-us" className="relative pt-32 bg-gradient-to-b from-blue-50 via-white to-blue-100 text-black py-20 px-4 overflow-x-hidden">
       <Helmet>
         <title>About | Code Vibe Innovation</title>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-16 animate__animated animate__fadeInDown">
+        <div className="text-center mb-4 animate__animated animate__fadeInDown">
           <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-pink-600 to-orange-500">
             Why Choose CODE VIBE INNOVATION
           </h2>
@@ -118,7 +118,7 @@ const About = () => {
         </div>
 
         {/* Core Values */}
-        <div className="grid gap-8 sm:grid-cols-2 mb-20">
+        <div className="grid gap-8 sm:grid-cols-2 mb-10">
           {coreValues.map((item, i) => (
             <div key={i} className="core-value bg-white/60 backdrop-blur-md border-l-4 border-blue-600 shadow-xl rounded-xl p-6 hover:scale-105 transition-transform duration-300">
               <div className="h-14 w-14 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-500 text-white shadow-md">

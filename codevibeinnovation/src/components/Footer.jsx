@@ -23,7 +23,7 @@ const Footer = () => {
             Delivering creative tech solutions with passion and integrity. From innovative web apps to mentoring — committed to digital excellence.
           </p>
           <img src={logo} alt="Code Vibe Innovation Logo" className="h-16 w-auto mt-2" />
-          <p className="mt-2 text-xs text-blue-900 italic">"FROM LEARNERS TO LEADERS"</p>
+          <p className="mt-2 text-xs text-blue-900 italic">"From Learners to Leaders"</p>
         </div>
 
         {/* Quick Links */}
@@ -103,7 +103,7 @@ const Footer = () => {
           <div className="flex gap-5 mt-8">
             {[
               { Icon: Instagram, url: "https://www.instagram.com/codevibeinnovation/", label: "Instagram" },
-              { Icon: Linkedin, url: "https://www.linkedin.com/in/codevibe-innovation-57a770363/", label: "LinkedIn" },
+              { Icon: Linkedin, url: "https://www.linkedin.com/in/codevibe-innovation-57a7070363/", label: "LinkedIn" },
               { Icon: Facebook, url: "https://facebook.com", label: "Facebook" }
             ].map(({ Icon, url, label }, i) => (
               <a
@@ -122,7 +122,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-blue-300 pt-6 text-center text-sm text-blue-700 font-semibold tracking-wide select-none">
+      <div className="border-t border-blue-900 pt-6 text-center text-sm text-blue-900 font-semibold tracking-wide select-none">
         &copy; {new Date().getFullYear()} CODE VIBE INNOVATION. All rights reserved.
       </div>
     </footer>

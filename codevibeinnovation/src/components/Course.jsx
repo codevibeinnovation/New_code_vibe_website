@@ -253,7 +253,75 @@ logos: [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1947WuYOc-RqCo-7M25ZaxQjfDzXfe6wR6rZNQTUjbPFMGOB4vg&s=10&ec=72940545",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5UQs-3-OesYgajT-EoA9gib7Om2Pavo-RDgpv2OdN-Q&s&ec=72940545",
   ],
-  }
+  },
+  {
+  id: 18,
+  title: "Java Programming",
+  badge: "Basic to Advanced",
+  path: "Java",
+  points: [
+    "Introduction to Java & JVM",
+    "Variables, Data Types & Operators",
+    "OOP Concepts (Class, Object, Inheritance, Polymorphism)",
+    "Exception Handling",
+    "Collections Framework",
+    "File Handling",
+    "Multithreading Basics",
+    "JDBC & Database Connectivity"
+  ],
+  logos: [
+    "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+    "https://cdn-icons-png.flaticon.com/512/226/226777.png"
+  ]
+},
+{
+  id: 19,
+  title: "Artificial Intelligence",
+  badge: "Basic to Advanced",
+  path: "AI",
+  points: [
+    "Introduction to Artificial Intelligence",
+    "AI vs ML vs Deep Learning",
+    "Python for AI",
+    "Data Preprocessing & Analysis",
+    "Machine Learning Algorithms",
+    "Deep Learning & Neural Networks",
+    "Natural Language Processing (NLP)",
+    "Computer Vision Basics",
+    "AI Model Deployment & Real-World Projects"
+  ],
+  logos: [
+   
+    "https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+  ]
+},
+{
+  id: 21,
+  title: "Git & GitHub",
+  badge: "Basic to Advanced",
+  path: "Git-GitHub",
+  points: [
+    "Introduction to Version Control",
+    "What is Git & Why Use It?",
+    "Installing Git & Initial Setup",
+    "Git Commands",
+    "Branching & Merging",
+    "Handling Merge Conflicts",
+    "Working with Remote Repositories",
+    "GitHub Basics (Repositories, Clone)",
+    "Pull Requests & Code Review",
+    "GitHub Collaboration Workflow",
+    "GitHub Issues & Project Management",
+    "Best Practices & Real-World Workflow"
+  ],
+  logos: [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+  ]
+}
+
+
+
+
 
 
 
@@ -282,19 +350,22 @@ const CoursesSection = () => {
   
   return (
     <div>
-    <div className="relative w-full min-h-screen px-4 sm:px-6 py-10 pt-24 bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden">
+    <div className="relative w-full min-h-screen px-4 sm:px-6 py-10 pt-32 bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden">
+
       {/* Background Glow */}
       <div className="absolute inset-0 z-0 animate-pulse bg-gradient-to-r from-blue-100 via-pink-100 to-orange-100 opacity-20" />
   
       {/* Heading */}
-      <div className="text-center z-10">
-        <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-800 via-pink-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
-          Explore Our Courses
-        </h2>
-        <p className="mt-4 text-sm sm:text-base text-blue-900">
-          Unlock your future with hands-on practical learning.
-        </p>
-      </div>
+      <div className="text-center z-10 animate-fade-in-up">
+  <h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-pink-500 to-yellow-500 drop-shadow-[0_4px_6px_rgba(0,0,0,0.2)] animate-gradient bg-[200%_auto] bg-clip-text">
+  Explore Our Courses
+  </h2>
+  <p className="mt-4 text-sm sm:text-base text-blue-900 font-medium tracking-wide animate-pulse">
+    Unlock your future with <span className="text-purple-600 font-semibold">hands-on practical learning</span>.
+  </p>
+  <div className="w-24 h-1 mt-4 mx-auto bg-gradient-to-r from-indigo-500 via-pink-500 to-orange-400 rounded-full shadow-lg animate-pulse" />
+</div>
+
   
       {/* Course Cards */}
       <div className="relative z-10 pt-16 grid gap-10 sm:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
