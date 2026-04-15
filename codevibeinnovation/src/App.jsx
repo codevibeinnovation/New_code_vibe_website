@@ -15,6 +15,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 import BlogDetails from './components/BlogDetails';
 import ScrollToTop from './components/ScrollToTop';
+import Portfolio from './components/Portfolio';
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Routes>
           {/* Ensure Home page is the default route */}
           <Route path="/" element={<Home />} />
+          <Route path='/portfolio' element={<Portfolio/>}/>
           <Route path="/internship" element={<InternshipPage />} />
           <Route path="/courses" element={<Course />} />
           <Route path="/contact-us" element={<Contact />} />

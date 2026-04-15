@@ -37,6 +37,15 @@ const Home1 = () => {
     "Job Placement Help",
   ];
 
+// const companies = [
+//   { name: "TCS", logo: "https://www.lauruss.com/assets/images/logo.svg" },
+//   { name: "Infosys", logo: "/images/companies/infosys.png" },
+//   { name: "Wipro", logo: "/images/companies/wipro.png" },
+//   { name: "Capgemini", logo: "/images/companies/capgemini.png" },
+//   { name: "HCL", logo: "/images/companies/hcl.png" },
+//   { name: "Tech Mahindra", logo: "/images/companies/techmahindra.png" },
+// ];
+
   const testimonials = [
     {
       name: "NENCY PATEL",
@@ -160,7 +169,8 @@ const Home1 = () => {
     { name: "C Programming", path: "/courses/cjava", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
     { name: "C++ Programming", path: "/courses/cjava", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
     { name: "Java", path: "/courses/cjava", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-    { name: "Python Django", path: "/courses/pythonDjangoAPIwithRealWorldProject", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+    { name: "Python", path: "/courses/CorePyhton", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "Django", path: "/courses/pythonDjangoAPIwithRealWorldProject", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
     { name: "React JS", path: "/courses/FrontendDevelopment", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Database Administrator", path: "/courses/DatabaseAdministratorcourse", logo: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png" },
     { name: "Flutter", path: "/courses/Flutter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
@@ -171,6 +181,8 @@ const Home1 = () => {
       logo: "https://cdn-icons-png.flaticon.com/512/732/732220.png"
     },
 
+    { name: "Artificial Intelligence", path: "/courses/AI", logo: "https://cdn-icons-png.flaticon.com/512/4712/4712109.png" },
+{ name: "Docker", path: "/courses/Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
     { name: "FastAPI", path: "/courses/FastApi", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
     { name: "AWS Cloud", path: "/courses/Aws", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
     { name: "Data Science", path: "/courses/DataScience", logo: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png" },
@@ -652,6 +664,10 @@ const Home1 = () => {
     }
   `}</style>
       </section>
+
+
+
+      
       <div className="w-full bg-gradient-to-br from-indigo-100 via-sky-100 to-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-sky-900 to-indigo-700 mb-16 drop-shadow-xl underline decoration-blue-900 underline-offset-4 pb-2">

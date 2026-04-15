@@ -317,6 +317,27 @@ logos: [
   logos: [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
   ]
+},
+{
+  id: 22,
+  title: "Docker",
+  badge: "Basic to Advanced",
+  path: "Docker",
+  points: [
+    "Introduction to Docker & Containerization",
+    "Virtualization vs Containers",
+    "Docker Installation & Setup",
+    "Docker Images and Containers",
+    "Dockerfile Creation",
+    "Docker Hub & Image Management",
+    "Docker Networking Basics",
+    "Docker Volumes & Data Persistence",
+    "Docker Compose for Multi-Container Applications",
+    "Deploying Applications using Docker"
+  ],
+  logos: [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+  ]
 }
 
 

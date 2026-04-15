@@ -2254,111 +2254,66 @@ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo
   path: "AI",
   badge: "Beginner to Advanced",
   description:
-    "This course covers Artificial Intelligence from Python fundamentals to advanced Machine Learning, Deep Learning, and NLP concepts. Learners will work on real-world AI projects, model deployment, and gain industry-ready skills through hands-on training.",
+    "This course covers Artificial Intelligence from Python fundamentals to advanced Machine Learning, Deep Learning, NLP, and Generative AI. Students will work on real-world projects and learn how to deploy AI models for practical applications.",
+
   category: "Artificial Intelligence & Machine Learning",
+
   content: {
     courseOverview: [
-      "Introduction to Artificial Intelligence",
       "Python Programming for AI",
-      "Data Preprocessing & Analysis",
+      "Mathematics for Artificial Intelligence",
+      "Data Science & Data Analysis",
       "Machine Learning Algorithms",
-      "Deep Learning & Neural Networks",
-      "Natural Language Processing (NLP)",
-      "Computer Vision Basics",
-      "AI Model Deployment",
-      "Real-World AI Projects"
+      "Natural Language Processing",
+      "Computer Vision",
+      "Deep Learning with TensorFlow",
+      "Generative AI & Prompt Engineering",
+      "AI Model Deployment & Capstone Project"
     ],
 
     moduleContent: {
-      "Module 1: Python & AI Foundations": [
-        "What is Artificial Intelligence?",
-        "Real-world Applications of AI",
-        "Python Installation & IDE Setup (Anaconda / VS Code)",
-        "Variables, Data Types & Operators",
-        "Input and Output Operations",
-        "Conditional Statements",
-        "Loops (for, while)",
-        "Functions & Arguments",
-        "Lambda Functions",
-        "Basic Problem Solving",
-        "Practice Assignments"
+
+      "Module 1 – Python & Mathematics Foundation": [
+        "Python Basics – Variables, Data Types, Operators, Conditions, Loops",
+        "Functions, Data Structures, File Handling, Exception Handling",
+        "Object Oriented Programming – Classes, Inheritance, Polymorphism",
+        "Mathematics for AI – Linear Algebra Basics, Probability, Statistics, NumPy"
       ],
 
-      "Module 2: Python Data Handling & Libraries": [
-        "Lists, Tuples, Sets & Dictionaries",
-        "String Handling",
-        "File Handling",
-        "Exception Handling",
-        "Object-Oriented Programming (Class, Object, Inheritance)",
-        "NumPy Basics",
-        "Pandas Basics",
-        "Mini Python Project"
+      "Module 2 – Data Science & Machine Learning": [
+        "Data Analysis – NumPy, Pandas, Data Cleaning, Visualization",
+        "Exploratory Data Analysis (EDA) & Feature Engineering",
+        "Machine Learning Basics – Types of ML, Train-Test Split, Evaluation Metrics",
+        "Supervised Learning – Linear Regression, Logistic Regression, KNN, Decision Tree, Random Forest"
       ],
 
-      "Module 3: Machine Learning Fundamentals": [
-        "What is Machine Learning?",
-        "Types of Machine Learning (Supervised, Unsupervised, Reinforcement)",
-        "Machine Learning Workflow",
-        "Data Cleaning & Preprocessing",
-        "Train-Test Split",
-        "Linear Regression",
-        "Logistic Regression",
-        "K-Nearest Neighbors (KNN)",
-        "Decision Trees",
-        "K-Means Clustering",
-        "Hierarchical Clustering",
-        "Dimensionality Reduction (PCA)",
-        "Model Evaluation Metrics",
-        "Accuracy, Precision, Recall, F1-Score",
-        "Cross Validation",
-        "Mini Machine Learning Project"
+      "Module 3 – Advanced ML, NLP & Computer Vision": [
+        "Unsupervised Learning – K-Means, Hierarchical Clustering, PCA",
+        "Natural Language Processing – Text Preprocessing, TF-IDF, Sentiment Analysis",
+        "Deep Learning – Neural Networks, Activation Functions, TensorFlow/Keras",
+        "Computer Vision – OpenCV, Image Processing, Face Detection"
       ],
 
-      "Module 4: Deep Learning & NLP": [
-        "Introduction to Deep Learning",
-        "Artificial Neural Networks (ANN)",
-        "Activation Functions",
-        "TensorFlow & Keras Basics",
-        "Convolutional Neural Networks (CNN)",
-        "Image Classification",
-        "Transfer Learning",
-        "Natural Language Processing Overview",
-        "Text Preprocessing",
-        "Tokenization, Stemming, Lemmatization",
-        "Bag of Words & TF-IDF",
-        "Sentiment Analysis",
-        "OpenCV Basics",
-        "Chatbot Basics",
-        "Using AI APIs",
-        "Mini Deep Learning / NLP Project"
-      ],
-
-      "Module 5: Projects, Deployment & Career Preparation": [
-        "Recommendation System",
-        "Face Recognition System",
-        "Spam Detection System",
-        "Stock Price Prediction",
-        "Flask Basics",
-        "Deploying ML Models as APIs",
-        "Streamlit Dashboards",
-        "Git & GitHub Basics",
-        "Final Project Planning",
-        "Dataset Selection",
-        "Model Building & Optimization",
-        "Project Testing & Presentation"
+      "Module 4 – Generative AI & Deployment": [
+        "CNN, RNN, LSTM",
+        "Generative AI, Prompt Engineering, AI APIs Integration",
+        "Model Deployment – Flask, Web App Integration, Deployment Basics",
+        "Final Capstone Project & Presentation"
       ]
     }
   },
 
   overview: {
     whatYouCanDo: [
-      "Build AI & ML models using Python",
-      "Develop Machine Learning & Deep Learning applications",
-      "Work on NLP and Computer Vision projects",
-      "Deploy AI models as web applications",
-      "Create an AI project portfolio"
+      "Build AI and Machine Learning models using Python",
+      "Develop NLP and Computer Vision applications",
+      "Work with Deep Learning frameworks like TensorFlow",
+      "Build Generative AI applications using APIs",
+      "Deploy AI models as web applications"
     ],
+
     prerequisites: ["Basic programming knowledge"],
+
     weOffer: [
       "Classroom Training",
       "Online Training",
@@ -2367,6 +2322,7 @@ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo
       "One to One Training",
       "Project-Based Learning"
     ],
+
     trainingIncludes: [
       "Theory & Practical Sessions",
       "Hands-on Real-world AI Projects",
@@ -2539,6 +2495,114 @@ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sHWbXicl4tDOTwuo
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
+  ]
+},
+{
+  id: 22,
+  image: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
+  title: "Docker",
+  path: "Docker",
+  badge: "Beginner to Advanced",
+  description:
+    "This course provides complete knowledge of Docker and containerization. Students will learn how to build, manage, and deploy applications using Docker containers, images, and Docker Compose. The course also covers real-world deployment practices used in modern DevOps environments.",
+
+  category: "Cloud & DevOps",
+
+  content: {
+    courseOverview: [
+      "Introduction to Containerization",
+      "Docker Installation & Setup",
+      "Docker Images & Containers",
+      "Docker Networking",
+      "Docker Volumes & Storage",
+      "Docker Compose",
+      "Docker for Application Deployment",
+      "Docker with CI/CD",
+      "Real-world Containerized Projects"
+    ],
+
+    moduleContent: {
+
+      "Module 1 – Docker Foundations": [
+        "Introduction to Virtualization vs Containerization",
+        "What is Docker and Why it is Used",
+        "Docker Architecture",
+        "Docker Installation (Windows, Linux, Mac)",
+        "Docker CLI Basics",
+        "Running Your First Docker Container",
+        "Understanding Docker Images and Containers"
+      ],
+
+      "Module 2 – Docker Images & Container Management": [
+        "Docker Images and Layers",
+        "Pulling Images from Docker Hub",
+        "Creating Custom Docker Images",
+        "Writing Dockerfiles",
+        "Building and Tagging Images",
+        "Managing Containers (Start, Stop, Restart)",
+        "Container Logs and Monitoring"
+      ],
+
+      "Module 3 – Docker Networking & Storage": [
+        "Docker Networking Basics",
+        "Bridge Network",
+        "Host Network",
+        "Connecting Containers",
+        "Docker Volumes",
+        "Bind Mounts",
+        "Persistent Data in Containers"
+      ],
+
+      "Module 4 – Docker Compose & Deployment": [
+        "Introduction to Docker Compose",
+        "Writing docker-compose.yml",
+        "Running Multi-container Applications",
+        "Scaling Containers",
+        "Dockerizing Web Applications",
+        "CI/CD Integration with Docker",
+        "Deploying Containerized Applications"
+      ]
+    }
+  },
+
+  overview: {
+    whatYouCanDo: [
+      "Containerize applications using Docker",
+      "Build and manage Docker images and containers",
+      "Deploy applications using Docker Compose",
+      "Manage container networking and storage",
+      "Prepare applications for DevOps deployment"
+    ],
+
+    prerequisites: [
+      "Basic knowledge of operating systems",
+      "Basic understanding of software development"
+    ],
+
+    weOffer: [
+      "Classroom Training",
+      "Online Training",
+      "Corporate Training",
+      "Weekend Training",
+      "One to One Training",
+      "Project-Based Learning"
+    ],
+
+    trainingIncludes: [
+      "Hands-on Docker Labs",
+      "Real-world Container Projects",
+      "Internship Certification",
+      "Study Materials",
+      "GitHub Portfolio Support",
+      "Career Guidance & Job Assistance"
+    ]
+  },
+
+  logos: [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
   ]
 }
 

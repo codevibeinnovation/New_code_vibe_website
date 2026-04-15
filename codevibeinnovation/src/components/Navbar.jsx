@@ -25,15 +25,16 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Courses', path: '/courses' },
-    { name: 'Internship', path: '/internship' },
-    { name: 'About Us', path: '/about-us' },
-    { name: 'Contact Us', path: '/contact-us' },
-    { name: 'Services', path: '/services' },
-    { name: 'Blog', path: '/blog' },
-  ];
+ const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Courses', path: '/courses' },
+  { name: 'Internship', path: '/internship' },
+  { name: 'Portfolio', path: '/portfolio' },
+  { name: 'About Us', path: '/about-us' },
+  { name: 'Services', path: '/services' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'Contact Us', path: '/contact-us' },
+];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur shadow-md border-b border-gray-200 transition-all duration-300">
