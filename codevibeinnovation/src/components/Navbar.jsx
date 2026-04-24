@@ -25,16 +25,22 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
- const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Courses', path: '/courses' },
-  { name: 'Internship', path: '/internship' },
-  { name: 'Portfolio', path: '/portfolio' },
-  { name: 'About Us', path: '/about-us' },
-  { name: 'Services', path: '/services' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Contact Us', path: '/contact-us' },
-];
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Courses', path: '/courses' },
+    { name: 'Portfolio', path: '/portfolio' },
+    { name: 'About Us', path: '/about-us' },
+    // { name: 'Services', path: '/services' },
+    
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact Us', path: '/contact-us' },
+    
+  ];
+
+  const specialItems = [
+     //{ name: 'Internship', path: '/internship', style: 'bg-gradient-to-r from-orange-400 to-red-500 text-white' },
+    { name: 'Internship', path: '/internship', style: 'bg-gradient-to-r from-orange-400 to-red-500 text-white' },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur shadow-md border-b border-gray-200 transition-all duration-300">
@@ -59,6 +65,17 @@ const Navbar = () => {
                   } 
                   text-sm md:text-base lg:text-lg`
                 }
+              >
+                {name}
+              </NavLink>
+            </li>
+          ))}
+          {/* Special Items - Internships & Training */}
+          {specialItems.map(({ name, path, style }) => (
+            <li key={path}>
+              <NavLink
+                to={path}
+                className={`px-5 py-2 rounded-full font-bold ${style} hover:shadow-lg hover:scale-110 transition-all duration-300 text-sm md:text-base`}
               >
                 {name}
               </NavLink>
@@ -104,6 +121,18 @@ const Navbar = () => {
                       : 'text-blue-900 hover:bg-blue-50 hover:text-blue-700'
                     }`
                   }
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {name}
+                </NavLink>
+              </li>
+            ))}
+            {/* Special Items Mobile - Internship & Training */}
+            {specialItems.map(({ name, path, style }) => (
+              <li key={path} className="border-t border-gray-300 pt-3 mt-3">
+                <NavLink
+                  to={path}
+                  className={`block py-3 px-4 text-lg rounded-full font-bold ${style} text-center hover:shadow-lg transition-all duration-300`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {name}
