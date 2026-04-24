@@ -74,7 +74,7 @@ const Hero = () => (
         lineHeight: 1.02, margin: '0 0 22px', color: 'rgb(30 58 138)',
       }}>
         Professional{' '}
-        <span style={{ color: '#f54f2eff', fontStyle: 'italic' }}>Internship</span>
+        <span style={{ color: '#f54f2eff' }}>Internship</span>
         <br />Programs
       </h1>
       <p style={{ ...body, fontSize: 18, color: '#64748b', maxWidth: 500, margin: '0 auto 36px', lineHeight: 1.75 }}>
@@ -271,10 +271,14 @@ const CompanyAndForm = () => {
         body: fd,
         headers: { Accept: "application/json" },
       });
-      if (res.ok) {
-        toast.success("Message sent successfully!");
-        setFormData({ name: '', email: '', mobile: '', message: '' });
-      } else {
+    if (res.ok) {
+  toast.success("Message sent successfully!");
+
+  // 🎯 TRACK EVENT HERE
+  ReactPixel.track("Lead"); // OR "CompleteRegistration"
+
+  setFormData({ name: '', email: '', mobile: '', message: '' });
+} else {
         toast.error("Failed to send. Please try again.");
       }
     } catch {
@@ -456,19 +460,6 @@ const CompanyAndForm = () => {
 
         </div>
 
-        {/* ── Google Map ── */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-          style={{ marginTop: 52, borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 40px rgba(124,58,237,0.12)', border: '3px solid rgba(255,255,255,0.8)' }}>
-          <iframe
-            title="Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8913735840037!2d72.55775607495745!3d23.02812621594767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f5a819c22d%3A0x17f8e1c1e7cc3e60!2sSamudra%20Complex%2C%20CG%20Road%2C%20Navrangpura%2C%20Ahmedabad%2C%20Gujarat%20380009!5e0!3m2!1sen!2sin!4v1714000000000!5m2!1sen!2sin"
-            width="100%"
-            height="380"
-            allowFullScreen=""
-            loading="lazy"
-            style={{ border: 0, display: 'block' }}
-          />
-        </motion.div>
 
       </div>
 

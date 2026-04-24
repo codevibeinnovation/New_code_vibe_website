@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import ReactPixel from "react-facebook-pixel";
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import InternshipPage from './components/Internship';
@@ -20,6 +20,10 @@ import Training from './components/training';
 
 
 const App = () => {
+   useEffect(() => {
+    ReactPixel.init("1320136166683966"); // replace here
+    ReactPixel.pageView(); // track page load
+  }, []);
   return (
     <div>
       <BrowserRouter>
