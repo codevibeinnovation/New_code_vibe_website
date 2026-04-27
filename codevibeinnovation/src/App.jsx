@@ -12,12 +12,12 @@ import Services from './components/Services';
 import Blog from './components/Blog';
 import CourseDetail from './components/CourseDetail';
 import WhatsAppButton from './components/WhatsAppButton';
-
+import { useEffect } from 'react';
 import BlogDetails from './components/BlogDetails';
 import ScrollToTop from './components/ScrollToTop';
 import Portfolio from './components/Portfolio';
 import Training from './components/training';
-
+import ThankYou from './components/Thankyou';
 
 const App = () => {
    useEffect(() => {
@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/courses/:path" element={<CourseDetail />} />
  <Route path="/internship" element={<Training />} />
-   
+     <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </BrowserRouter>
       <Footer/>

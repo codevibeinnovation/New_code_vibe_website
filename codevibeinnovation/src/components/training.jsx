@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Typewriter } from 'react-simple-typewriter';
 import toast, { Toaster } from 'react-hot-toast';
 import { Helmet } from 'react-helmet';
-
+import { useNavigate } from "react-router-dom";
 /* ── Font Loader ── */
 const FontLoader = () => {
   useEffect(() => {
@@ -235,7 +235,7 @@ const TrendingCourses = () => {
 const CompanyAndForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', mobile: '', message: '' });
   const [sending, setSending] = useState(false);
-
+const navigate = useNavigate();
   const validate = () => {
     const { name, email, mobile, message } = formData;
     if (!name.trim() || name.trim().length < 2) {
@@ -259,39 +259,56 @@ const CompanyAndForm = () => {
     return true;
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validate()) return;
+
     setSending(true);
+
     const fd = new FormData();
     Object.entries(formData).forEach(([k, v]) => fd.append(k, v));
+
     try {
       const res = await fetch("https://formspree.io/f/mldneabp", {
         method: "POST",
         body: fd,
         headers: { Accept: "application/json" },
       });
-    if (res.ok) {
-  toast.success("Message sent successfully!");
 
-  // 🎯 TRACK EVENT HERE
-  ReactPixel.track("Lead"); // OR "CompleteRegistration"
+      if (res.ok) {
+        toast.success("Message sent successfully!");
 
-  setFormData({ name: '', email: '', mobile: '', message: '' });
-} else {
-        toast.error("Failed to send. Please try again.");
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          mobile: '',
+          message: ''
+        });
+
+        // Redirect
+        setTimeout(() => {
+          navigate("/thank-you");
+        }, 1000);
+
+      } else {
+        toast.error("Submission failed");
       }
+
     } catch {
-      toast.error("Something went wrong. Try again later.");
-    } finally {
-      setSending(false);
+      toast.error("Something went wrong");
     }
+
+    setSending(false);
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+
+
 
   const infoItems = [
     { icon: '📍', label: 'Address', value: companyDetails.address },
